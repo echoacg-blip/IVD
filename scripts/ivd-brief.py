@@ -23,9 +23,20 @@ def regulatory():
         "search": 'medical_specialty_description:"Clinical Chemistry" OR medical_specialty_description:"Hematology"',
         "sort": "decision_date:desc", "limit": 12,
     })
-    return [dict(title=r["device_name"], date=r.get("decision_date"), category="产品动态",
-                 source="FDA 510(k)", url="https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=" + quote(r["k_number"]))
-            for r in data["results"] if r.get("device_name") and r.get("k_number")]
+    items = []
+    for record in data["results"]:
+        name, number = record.get("device_name"), record.get("k_number")
+        if not name or not number:
+            continue
+        fields = [f"FDA 510(k) 记录 {number}"]
+        for label, key in (("申请方", "applicant"), ("器械专业类别", "medical_specialty_description"),
+                           ("决定日期", "decision_date")):
+            if record.get(key):
+                fields.append(f"{label}：{record[key]}")
+        items.append(dict(title=name, date=record.get("decision_date"), category="产品动态",
+                          source="FDA 510(k)", summary="。".join(fields) + "。",
+                          url="https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=" + quote(number, safe="")))
+    return items
 
 def prioritize(item, today):
     published = item.get("date")
