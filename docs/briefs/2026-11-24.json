@@ -1,32 +1,214 @@
 {
   "date": "2026-11-24",
-  "unavailable": [
-    "Europe PMC"
-  ],
   "items": [
+    {
+      "title": "Loop-Mediated Isothermal Amplification (LAMP) as a Rapid Molecular Tool for Salmonella Detection in Food.",
+      "date": "2027-01-01",
+      "category": "前沿科研",
+      "source": "Europe PMC",
+      "url": "https://doi.org/10.1007/978-1-0716-5559-7_20",
+      "score": 40,
+      "reason": "科研文献索引 · 近一周发布",
+      "reading_note": "阅读原文时可先看研究人群、对照方法和验证范围，判断结论是否适用于你的应用场景。"
+    },
+    {
+      "title": "Chronic Hepatitis B in the United States: Current Landscape, Unmet Needs and Future Directions.",
+      "date": "2026-12-01",
+      "category": "前沿科研",
+      "source": "Europe PMC",
+      "url": "https://doi.org/10.1111/jvh.70237",
+      "score": 40,
+      "reason": "科研文献索引 · 近一周发布",
+      "reading_note": "阅读原文时可先看研究人群、对照方法和验证范围，判断结论是否适用于你的应用场景。"
+    },
+    {
+      "title": "Burden of acute diseases associated with group A Streptococcus in Australia 2000-2022: a critical review and online database.",
+      "date": "2026-12-01",
+      "category": "前沿科研",
+      "source": "Europe PMC",
+      "url": "https://doi.org/10.1071/ah25303",
+      "score": 40,
+      "reason": "科研文献索引 · 近一周发布",
+      "reading_note": "阅读原文时可先看研究人群、对照方法和验证范围，判断结论是否适用于你的应用场景。"
+    },
+    {
+      "title": "Diagnostic accuracy of molecular and non-molecular assays for urogenital schistosomiasis in Zambian schoolchildren: a latent class and composite reference standard analysis",
+      "date": "2026-11-23",
+      "category": "前沿科研",
+      "source": "Europe PMC",
+      "url": "https://doi.org/10.21203/rs.3.rs-11691498/v1",
+      "score": 39,
+      "reason": "科研文献索引 · 近一周发布",
+      "reading_note": "阅读原文时可先看研究人群、对照方法和验证范围，判断结论是否适用于你的应用场景。"
+    },
+    {
+      "title": "Analytical agreement and classification performance of two point-of-care devices for lipid panel measurement",
+      "date": "2026-11-23",
+      "category": "前沿科研",
+      "source": "Europe PMC",
+      "url": "https://doi.org/10.21203/rs.3.rs-11233150/v1",
+      "score": 39,
+      "reason": "科研文献索引 · 近一周发布",
+      "reading_note": "阅读原文时可先看研究人群、对照方法和验证范围，判断结论是否适用于你的应用场景。"
+    },
+    {
+      "title": "Profiling host-pathogen dynamic in a 3D human epidermal infection model and real-time sensing of IL-1α as a tissue-damage biomarker",
+      "date": "2026-11-20",
+      "category": "前沿科研",
+      "source": "Europe PMC",
+      "url": "https://doi.org/10.64898/2026.11.19.767804",
+      "score": 36,
+      "reason": "科研文献索引 · 近一周发布",
+      "reading_note": "阅读原文时可先看研究人群、对照方法和验证范围，判断结论是否适用于你的应用场景。"
+    },
+    {
+      "title": "From operational analysis to implementable emergency department throughput interventions: Integrating Theory of Constraints and Design Science Research",
+      "date": "2026-11-20",
+      "category": "前沿科研",
+      "source": "Europe PMC",
+      "url": "https://doi.org/10.21203/rs.3.rs-10878718/v1",
+      "score": 36,
+      "reason": "科研文献索引 · 近一周发布",
+      "reading_note": "阅读原文时可先看研究人群、对照方法和验证范围，判断结论是否适用于你的应用场景。"
+    },
+    {
+      "title": "Moving diagnostics upstream: prehospital blood gas analysis is associated with safe community care and improved patient selection for hospital admission.",
+      "date": "2026-11-20",
+      "category": "前沿科研",
+      "source": "Europe PMC",
+      "url": "https://doi.org/10.1136/emermed-2026-216096",
+      "score": 36,
+      "reason": "科研文献索引 · 近一周发布",
+      "reading_note": "阅读原文时可先看研究人群、对照方法和验证范围，判断结论是否适用于你的应用场景。"
+    },
+    {
+      "title": "Covalent immobilization of blood typing antibodies on multilayer porous membranes for stable and rapid ABO blood typing immunodetection.",
+      "date": "2026-11-20",
+      "category": "前沿科研",
+      "source": "Europe PMC",
+      "url": "https://doi.org/10.1007/s00604-026-08570-x",
+      "score": 36,
+      "reason": "科研文献索引 · 近一周发布",
+      "reading_note": "阅读原文时可先看研究人群、对照方法和验证范围，判断结论是否适用于你的应用场景。"
+    },
+    {
+      "title": "Integrated SERS immunosensing chip for ultrasensitive detection of multiple breast cancer biomarkers (CEA and HER2) in human serum.",
+      "date": "2026-11-20",
+      "category": "前沿科研",
+      "source": "Europe PMC",
+      "url": "https://doi.org/10.1007/s00604-026-08561-y",
+      "score": 36,
+      "reason": "科研文献索引 · 近一周发布",
+      "reading_note": "阅读原文时可先看研究人群、对照方法和验证范围，判断结论是否适用于你的应用场景。"
+    },
+    {
+      "title": "Patient's self-monitoring of urate during allopurinol titration in primary care: a feasibility study.",
+      "date": "2026-11-19",
+      "category": "前沿科研",
+      "source": "Europe PMC",
+      "url": "https://doi.org/10.1080/02813432.2026.2764574",
+      "score": 35,
+      "reason": "科研文献索引 · 近一周发布",
+      "reading_note": "阅读原文时可先看研究人群、对照方法和验证范围，判断结论是否适用于你的应用场景。"
+    },
+    {
+      "title": "Recent progress and challenges in Schiff base-based optical chemosensors.",
+      "date": "2026-11-19",
+      "category": "前沿科研",
+      "source": "Europe PMC",
+      "url": "https://doi.org/10.1039/d6ra08395a",
+      "score": 35,
+      "reason": "科研文献索引 · 近一周发布",
+      "reading_note": "阅读原文时可先看研究人群、对照方法和验证范围，判断结论是否适用于你的应用场景。"
+    },
     {
       "title": "Sonoclot Coagulation & Platelet Function Analyzer System with Sonoclot Viewer (SCP1); Sonoclot Coagulation & Platelet Function Analzyer System with Sonoclot Viewer (SCP2); Sonoclot Coagulation Analyzer System with Sonoclot Viewer (SC1)",
       "date": "2026-10-27",
       "category": "产品动态",
       "source": "FDA 510(k)",
+      "summary": "FDA 510(k) 记录 K260909。申请方：Sienco, Inc.。审查专业代码：HE。决定日期：2026-10-27。",
       "url": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K260909",
-      "summary": "FDA 510(k) 记录 K260909。申请方：Sienco, Inc.。"
+      "score": 22,
+      "reason": "监管机构原始记录",
+      "reading_note": "查看 FDA 原始记录中的申请方、器械类别和决定日期，了解此次更新涉及的产品。"
     },
     {
       "title": "BD OneFlow LST; BD OneFlow B-CLPD T1; BD FACSLyric Flow Cytometer, 8-color [4-2-2], 10-color [4-3-3], 12-color (4-3-5)",
       "date": "2026-10-20",
       "category": "产品动态",
       "source": "FDA 510(k)",
+      "summary": "FDA 510(k) 记录 K260215。申请方：Bd Biosciences。审查专业代码：HE。决定日期：2026-10-20。",
       "url": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K260215",
-      "summary": "FDA 510(k) 记录 K260215。申请方：Bd Biosciences。"
+      "score": 20,
+      "reason": "监管机构原始记录",
+      "reading_note": "查看 FDA 原始记录中的申请方、器械类别和决定日期，了解此次更新涉及的产品。"
     },
     {
       "title": "STA® - Liquid Anti-Xa",
       "date": "2026-09-24",
       "category": "产品动态",
       "source": "FDA 510(k)",
+      "summary": "FDA 510(k) 记录 K260214。申请方：Diagnostica Stago, Inc.。审查专业代码：HE。决定日期：2026-09-24。",
       "url": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K260214",
-      "summary": "FDA 510(k) 记录 K260214。申请方：Diagnostica Stago, Inc.。"
+      "score": 20,
+      "reason": "监管机构原始记录",
+      "reading_note": "查看 FDA 原始记录中的申请方、器械类别和决定日期，了解此次更新涉及的产品。"
+    },
+    {
+      "title": "Yumizen H550",
+      "date": "2026-09-14",
+      "category": "产品动态",
+      "source": "FDA 510(k)",
+      "summary": "FDA 510(k) 记录 K260781。申请方：HORIBA ABX SAS。审查专业代码：HE。决定日期：2026-09-14。",
+      "url": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K260781",
+      "score": 20,
+      "reason": "监管机构原始记录",
+      "reading_note": "查看 FDA 原始记录中的申请方、器械类别和决定日期，了解此次更新涉及的产品。"
+    },
+    {
+      "title": "INNOVANCE® D-Dimer 2.0 (SMN 10873803)",
+      "date": "2026-08-11",
+      "category": "产品动态",
+      "source": "FDA 510(k)",
+      "summary": "FDA 510(k) 记录 K253985。申请方：Siemens Healthcare Diagnostic Products GmbH。审查专业代码：HE。决定日期：2026-08-11。",
+      "url": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K253985",
+      "score": 20,
+      "reason": "监管机构原始记录",
+      "reading_note": "查看 FDA 原始记录中的申请方、器械类别和决定日期，了解此次更新涉及的产品。"
+    },
+    {
+      "title": "OptraSCAN System",
+      "date": "2026-07-02",
+      "category": "产品动态",
+      "source": "FDA 510(k)",
+      "summary": "FDA 510(k) 记录 K260755。申请方：Optrascan, Inc.。审查专业代码：HE。决定日期：2026-07-02。",
+      "url": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K260755",
+      "score": 20,
+      "reason": "监管机构原始记录",
+      "reading_note": "查看 FDA 原始记录中的申请方、器械类别和决定日期，了解此次更新涉及的产品。"
+    },
+    {
+      "title": "Blood Volume Analyzer (200)",
+      "date": "2026-06-18",
+      "category": "产品动态",
+      "source": "FDA 510(k)",
+      "summary": "FDA 510(k) 记录 K261099。申请方：Daxor Corporation。审查专业代码：HE。决定日期：2026-06-18。",
+      "url": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K261099",
+      "score": 20,
+      "reason": "监管机构原始记录",
+      "reading_note": "查看 FDA 原始记录中的申请方、器械类别和决定日期，了解此次更新涉及的产品。"
+    },
+    {
+      "title": "XR-Series (XR-10, XR-20) Automated Hematology Analyzers",
+      "date": "2026-05-27",
+      "category": "产品动态",
+      "source": "FDA 510(k)",
+      "summary": "FDA 510(k) 记录 K253212。申请方：Sysmex America, Inc.。审查专业代码：HE。决定日期：2026-05-27。",
+      "url": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K253212",
+      "score": 20,
+      "reason": "监管机构原始记录",
+      "reading_note": "查看 FDA 原始记录中的申请方、器械类别和决定日期，了解此次更新涉及的产品。"
     }
-  ]
+  ],
+  "unavailable": []
 }
