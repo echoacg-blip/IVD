@@ -24,12 +24,20 @@ def research_summary(record):
             fields.append(f"{label}：{record[key]}")
     return "。".join(fields) + "。" if fields else ""
 
+def research_category(title):
+    normalized = title.casefold().replace("-", " ")
+    if any(term in normalized for term in ("point of care", "poct", "near patient testing")):
+        return "即时检测"
+    if any(term in normalized for term in ("molecular diagnos", "nucleic acid test", "digital pcr")):
+        return "分子诊断"
+    return "前沿科研"
+
 def research():
     data = get("https://www.ebi.ac.uk/europepmc/webservices/rest/search", {
-        "query": '("in vitro diagnostics" OR "point-of-care testing") AND HAS_DOI:Y SORT_DATE:y',
+        "query": '("in vitro diagnostics" OR "point-of-care testing" OR "molecular diagnostics") AND HAS_DOI:Y SORT_DATE:y',
         "format": "json", "pageSize": 12,
     })
-    return [dict(title=r["title"], date=r.get("firstPublicationDate"), category="前沿科研",
+    return [dict(title=r["title"], date=r.get("firstPublicationDate"), category=research_category(r["title"]),
                  source="Europe PMC", summary=research_summary(r), url="https://doi.org/" + quote(r["doi"], safe="/"))
             for r in data["resultList"]["result"] if r.get("title") and r.get("doi")]
 
