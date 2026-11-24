@@ -32,6 +32,11 @@ async function showEdition() {
       link.textContent = item.title;
       heading.append(link);
       card.append(meta, heading);
+      if (item.reason) {
+        const reason = document.createElement('small');
+        reason.textContent = '入选依据 · ' + item.reason;
+        card.append(reason);
+      }
       editionItems.append(card);
     }
     editionStatus.textContent = brief.items.length + ' 条动态' +
