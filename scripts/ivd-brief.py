@@ -69,7 +69,7 @@ def regulatory():
             continue
         fields = [f"FDA 510(k) 记录 {number}"]
         for label, key in (("申请方", "applicant"), ("审查专业代码", "advisory_committee"),
-                           ("决定日期", "decision_date")):
+                           ("决定日期", "decision_date"), ("审查结果", "decision_description")):
             if record.get(key):
                 fields.append(f"{label}：{record[key]}")
         items.append(dict(title=name, date=record.get("decision_date"), category="产品动态",
@@ -90,7 +90,8 @@ def pma():
         supplement = record.get("supplement_number")
         identifier = number + (supplement or "")
         fields = [f"FDA PMA 记录 {identifier}"]
-        for label, key in (("申请方", "applicant"), ("决定日期", "decision_date")):
+        for label, key in (("申请方", "applicant"), ("决定日期", "decision_date"),
+                           ("补充申请类型", "supplement_type"), ("补充申请原因", "supplement_reason")):
             if record.get(key):
                 fields.append(f"{label}：{record[key]}")
         items.append(dict(title=name, date=record.get("decision_date"), category="产品动态",
