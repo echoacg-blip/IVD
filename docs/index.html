@@ -66,7 +66,7 @@ async function showEdition() {
       editionItems.append(card);
     }
     editionStatus.textContent = (items.length ? '显示 ' + items.length + ' / ' + matches.length + ' 条动态' : '本期暂无该栏目动态') +
-      (brief.unavailable.length ? ' · 本期未获取 ' + brief.unavailable.join('、') : '');
+      (brief.unavailable.length ? ' · 本期未获取 ' + brief.unavailable.join('、') : '') + (brief.collected_at ? ' · 采集时间 ' + brief.collected_at.replace('T',' ').replace('+08:00','（北京时间）') : '');
   } catch {
     if (edition.value === date) {
       editionItems.replaceChildren();
