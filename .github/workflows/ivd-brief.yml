@@ -1,5 +1,11 @@
 name: IVD research brief
 on:
+  push:
+    branches: [main]
+    paths:
+      - 'docs/**'
+      - 'scripts/ivd-brief.py'
+      - '.github/workflows/ivd-brief.yml'
   workflow_dispatch:
   schedule:
     - cron: '30 23 * * *'
@@ -16,7 +22,8 @@ jobs:
     environment: github-pages
     steps:
       - uses: actions/checkout@v4
-      - run: python scripts/ivd-brief.py
+      - if: github.event_name != 'push'
+        run: python scripts/ivd-brief.py
       - run: |
           git add docs/briefs
           if git diff --cached --quiet; then exit 0; fi
