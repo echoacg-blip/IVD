@@ -1,6 +1,6 @@
 {
   "date": "2026-11-24",
-  "collected_at": "2026-11-24T17:32:23+08:00",
+  "collected_at": "2026-11-24T17:33:19+08:00",
   "items": [
     {
       "title": "Genotyping Protocol for Identifying Genetic Risk Markers Associated with Alpha-Gal Syndrome.",
@@ -8,6 +8,12 @@
       "category": "前沿科研",
       "source": "Europe PMC",
       "summary": "期刊：Methods Mol Biol。作者：Grujić J, Lilić M.。首次发表日期：2027-01-01。",
+      "related": [
+        {
+          "label": "PubMed",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42918996/"
+        }
+      ],
       "url": "https://doi.org/10.1007/978-1-0716-5635-8_22",
       "score": 40,
       "reason": "科研文献索引 · 近一周发布",
@@ -19,6 +25,12 @@
       "category": "前沿科研",
       "source": "Europe PMC",
       "summary": "期刊：Methods Mol Biol。作者：Rodríguez-Lázaro D, Alves M, Cañete-Reyes Á, Hernández M.。首次发表日期：2027-01-01。",
+      "related": [
+        {
+          "label": "PubMed",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42867796/"
+        }
+      ],
       "url": "https://doi.org/10.1007/978-1-0716-5559-7_21",
       "score": 40,
       "reason": "科研文献索引 · 近一周发布",
@@ -30,6 +42,12 @@
       "category": "前沿科研",
       "source": "Europe PMC",
       "summary": "期刊：Methods Mol Biol。作者：Cañete-Reyes Á, Alves M, Rodríguez-Lázaro D.。首次发表日期：2027-01-01。",
+      "related": [
+        {
+          "label": "PubMed",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42867795/"
+        }
+      ],
       "url": "https://doi.org/10.1007/978-1-0716-5559-7_20",
       "score": 40,
       "reason": "科研文献索引 · 近一周发布",
@@ -41,6 +59,12 @@
       "category": "前沿科研",
       "source": "Europe PMC",
       "summary": "期刊：Curr Med Mycol。作者：Safari F, Aboutalebian S, Khaledian T, Nasri E, Ahmadikia K.。首次发表日期：2026-12-15。",
+      "related": [
+        {
+          "label": "PubMed",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42984733/"
+        }
+      ],
       "url": "https://doi.org/10.22034/cmm.2025.345406.1658",
       "score": 40,
       "reason": "科研文献索引 · 近一周发布",
@@ -52,6 +76,12 @@
       "category": "前沿科研",
       "source": "Europe PMC",
       "summary": "期刊：J Viral Hepat。作者：Cohen C, Esteban JP, Bobde S, Wong RJ.。首次发表日期：2026-12-01。",
+      "related": [
+        {
+          "label": "PubMed",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42969555/"
+        }
+      ],
       "url": "https://doi.org/10.1111/jvh.70237",
       "score": 40,
       "reason": "科研文献索引 · 近一周发布",
@@ -63,6 +93,12 @@
       "category": "前沿科研",
       "source": "Europe PMC",
       "summary": "期刊：Aust Health Rev。作者：Stacey I, Junaid M, Stiles S, Bowen AC, Pearson G, Fulurija A, Katzenellenbogen JM.。首次发表日期：2026-12-01。",
+      "related": [
+        {
+          "label": "PubMed",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42983803/"
+        }
+      ],
       "url": "https://doi.org/10.1071/ah25303",
       "score": 40,
       "reason": "科研文献索引 · 近一周发布",
@@ -74,6 +110,12 @@
       "category": "前沿科研",
       "source": "Europe PMC",
       "summary": "期刊：Microbiologyopen。作者：Vandu CD, Okon MB, Fasogbon IV, Musyoka AM, Makena W, Ikuomola EO, Swase DT, Agwu E, Aja PM.。首次发表日期：2026-12-01。",
+      "related": [
+        {
+          "label": "PubMed",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/43036135/"
+        }
+      ],
       "url": "https://doi.org/10.1002/mbo3.70455",
       "score": 40,
       "reason": "科研文献索引 · 近一周发布",
@@ -85,6 +127,12 @@
       "category": "前沿科研",
       "source": "Europe PMC",
       "summary": "期刊：Microbiologyopen。作者：Yunus F, Rehman OU, Murtaza M, Mazhar S, Samadi A, Raza AA.。首次发表日期：2026-12-01。",
+      "related": [
+        {
+          "label": "PubMed",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42975008/"
+        }
+      ],
       "url": "https://doi.org/10.1002/mbo3.70449",
       "score": 40,
       "reason": "科研文献索引 · 近一周发布",
@@ -96,6 +144,12 @@
       "category": "前沿科研",
       "source": "Europe PMC",
       "summary": "期刊：J Genet Couns。作者：Wiedower J, Smith HS, Farrell CL, Parker V, Trammel SC.。首次发表日期：2026-12-01。",
+      "related": [
+        {
+          "label": "PubMed",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/43053346/"
+        }
+      ],
       "url": "https://doi.org/10.1002/jgc4.70299",
       "score": 40,
       "reason": "科研文献索引 · 近一周发布",
@@ -107,6 +161,12 @@
       "category": "前沿科研",
       "source": "Europe PMC",
       "summary": "期刊：J Foot Ankle Res。作者：Kadiri L, Maher A, Bridgen A.。首次发表日期：2026-12-01。",
+      "related": [
+        {
+          "label": "PubMed",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42826126/"
+        }
+      ],
       "url": "https://doi.org/10.1002/jfa2.70223",
       "score": 40,
       "reason": "科研文献索引 · 近一周发布",
@@ -118,6 +178,12 @@
       "category": "前沿科研",
       "source": "Europe PMC",
       "summary": "期刊：Clin Exp Dent Res。作者：Khaleefah OT, Zubidi MA, Elshazli AH, Gomaa MA.。首次发表日期：2026-12-01。",
+      "related": [
+        {
+          "label": "PubMed",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/43043903/"
+        }
+      ],
       "url": "https://doi.org/10.1002/cre2.70514",
       "score": 40,
       "reason": "科研文献索引 · 近一周发布",
@@ -129,6 +195,7 @@
       "category": "前沿科研",
       "source": "Europe PMC",
       "summary": "作者：Mutengo MM, Crego-Vicente B, Muro A, Mwansa J, Lodh N, Perteguer MJ, Carmena D, Fernández-Soto P, Sotillo J.。首次发表日期：2026-11-23。",
+      "related": [],
       "url": "https://doi.org/10.21203/rs.3.rs-11691498/v1",
       "score": 39,
       "reason": "科研文献索引 · 近一周发布",
@@ -223,7 +290,5 @@
       "reading_note": "查看 FDA 原始记录中的申请方、器械类别和决定日期，了解此次更新涉及的产品。"
     }
   ],
-  "unavailable": [
-    "Europe PMC"
-  ]
+  "unavailable": []
 }
