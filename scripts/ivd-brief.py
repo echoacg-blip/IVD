@@ -16,13 +16,21 @@ def get(url, query):
                 raise
             sleep(3)
 
+def research_summary(record):
+    fields = []
+    for label, key in (("期刊", "journalTitle"), ("作者", "authorString"),
+                       ("首次发表日期", "firstPublicationDate")):
+        if record.get(key):
+            fields.append(f"{label}：{record[key]}")
+    return "。".join(fields) + "。" if fields else ""
+
 def research():
     data = get("https://www.ebi.ac.uk/europepmc/webservices/rest/search", {
         "query": '("in vitro diagnostics" OR "point-of-care testing") AND HAS_DOI:Y SORT_DATE:y',
         "format": "json", "pageSize": 12,
     })
     return [dict(title=r["title"], date=r.get("firstPublicationDate"), category="前沿科研",
-                 source="Europe PMC", url="https://doi.org/" + quote(r["doi"], safe="/"))
+                 source="Europe PMC", summary=research_summary(r), url="https://doi.org/" + quote(r["doi"], safe="/"))
             for r in data["resultList"]["result"] if r.get("title") and r.get("doi")]
 
 def regulatory():
