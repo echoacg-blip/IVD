@@ -77,6 +77,27 @@ def regulatory():
                           url="https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=" + quote(number, safe="")))
     return items
 
+def pma():
+    data = get("https://api.fda.gov/device/pma.json", {
+        "search": "advisory_committee:(CL OR HE OR MI OR IM OR PA)",
+        "sort": "decision_date:desc", "limit": 8,
+    })
+    items = []
+    for record in data["results"]:
+        name, number = record.get("trade_name"), record.get("pma_number")
+        if not name or not number:
+            continue
+        supplement = record.get("supplement_number")
+        identifier = number + (supplement or "")
+        fields = [f"FDA PMA 记录 {identifier}"]
+        for label, key in (("申请方", "applicant"), ("决定日期", "decision_date")):
+            if record.get(key):
+                fields.append(f"{label}：{record[key]}")
+        items.append(dict(title=name, date=record.get("decision_date"), category="产品动态",
+                          source="FDA PMA", summary="。".join(fields) + "。",
+                          url="https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpma/pma.cfm?ID=" + quote(identifier, safe="")))
+    return items
+
 def prioritize(item, today):
     published = item.get("date")
     try:
@@ -84,7 +105,7 @@ def prioritize(item, today):
     except (ValueError, TypeError):
         age = 30
     freshness = max(0, 30 - age)
-    direct_source = item["source"] == "FDA 510(k)"
+    direct_source = item["source"] in {"FDA 510(k)", "FDA PMA"}
     item["score"] = freshness + (20 if direct_source else 10)
     item["reason"] = ("监管机构原始记录" if direct_source else "科研文献索引") + (
         " · 近一周发布" if age <= 7 else ""
@@ -123,7 +144,7 @@ def main():
     output = Path("docs/briefs")
     output.mkdir(exist_ok=True)
     items, unavailable = [], []
-    for source, load in [("Europe PMC", research), ("FDA 510(k)", regulatory)]:
+    for source, load in [("Europe PMC", research), ("FDA 510(k)", regulatory), ("FDA PMA", pma)]:
         try:
             items.extend(load())
         except (OSError, ValueError, KeyError) as error:
