@@ -33,11 +33,11 @@
       "syndicate_fulltext": false
     },
     {
-      "id": "ivd-fda-510k-cl",
+      "id": "ivd-fda-510k-ch",
       "name": "FDA 510(k) · 临床化学",
       "kind": "json_list",
       "config": {
-        "url": "https://api.fda.gov/device/510k.json?search=advisory_committee%3ACL&sort=decision_date%3Adesc&limit=12",
+        "url": "https://api.fda.gov/device/510k.json?search=advisory_committee%3ACH&sort=decision_date%3Adesc&limit=12",
         "mode": "json_api",
         "itemsPath": "results",
         "titlePaths": [
@@ -87,7 +87,7 @@
       "name": "FDA PMA · IVD 相关审查组",
       "kind": "json_list",
       "config": {
-        "url": "https://api.fda.gov/device/pma.json?search=advisory_committee%3A%28CL%20OR%20HE%20OR%20MI%20OR%20IM%20OR%20PA%29&sort=decision_date%3Adesc&limit=12",
+        "url": "https://api.fda.gov/device/pma.json?search=advisory_committee%3A%28CH%20OR%20HE%20OR%20MI%20OR%20IM%20OR%20PA%29&sort=decision_date%3Adesc&limit=12",
         "mode": "json_api",
         "itemsPath": "results",
         "titlePaths": [
