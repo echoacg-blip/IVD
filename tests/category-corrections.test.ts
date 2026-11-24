@@ -14,13 +14,13 @@ import { QUEUES, getBoss, stopBoss } from "@aihot/backend/jobs/queue";
 
 after(async () => { await stopBoss(); await closeDb(); });
 
-test("new models require a launch classification as well as an official, new model event", () => {
+test("IVD daily metrics omit the disabled model-release count", () => {
   const base = { category: "ai-models", tags: ["模型发布"], authority: 0, previous: null,
     entry: { sourceId: "official", firstParty: true } } as EditionEntry;
   const rows = [base, { ...base, tags: ["评测/基准"] }, { ...base, tags: ["产品更新"] },
     { ...base, category: "ai-products" }, { ...base, authority: 3 },
     { ...base, previous: { key: "2026-09-30", title: "已报过的发布" } }, { ...base, tags: [] }];
-  assert.equal(dailyMetrics(rows).modelsReleased, 1);
+  assert.equal(dailyMetrics(rows).modelsReleased, undefined);
   assert.equal(dailyMetrics(rows).totalEvents, 7);
 });
 
@@ -37,8 +37,8 @@ test("category corrections revise every standard report atomically without selec
   await publishArticle(articleId, { releasedAt: new Date(Date.now() - 60_000) });
   const entry = { itemId: articleId, title: "冻结标题", summary: "冻结摘要", sourceId, firstParty: true, role: "官方" };
   const contents = [
-    { kind: "daily", key: "2097-01-02", content: { leadItemId: articleId, lead: { title: "冻结头条" }, highlights: [articleId], flashes: [], sections: [{ label: "模型发布/更新", items: [entry] }], metrics: { totalEvents: 1, modelsReleased: 1 } } },
-    ...(["weekly", "monthly"] as const).map(kind => ({ kind, key: kind === "weekly" ? "2097-W01" : "2097-01", content: { headline: "冻结头条", leadItemId: articleId, storyOrder: [articleId], overview: "保留总述", themes: [{ heading: "模型发布/更新", summary: "旧模型导读", storyRefs: [entry] }], metrics: { totalStories: 1 } } })),
+    { kind: "daily", key: "2097-01-02", content: { leadItemId: articleId, lead: { title: "冻结头条" }, highlights: [articleId], flashes: [], sections: [{ label: "技术创新", items: [entry] }], metrics: { totalEvents: 1, modelsReleased: 1 } } },
+    ...(["weekly", "monthly"] as const).map(kind => ({ kind, key: kind === "weekly" ? "2097-W01" : "2097-01", content: { headline: "冻结头条", leadItemId: articleId, storyOrder: [articleId], overview: "保留总述", themes: [{ heading: "技术创新", summary: "旧模型导读", storyRefs: [entry] }], metrics: { totalStories: 1 } } })),
   ];
   for (const r of contents) await sql`INSERT INTO reports (kind,key,window_start,window_end,content,generated_at)
     VALUES (${r.kind},${r.key},now(),now(),${sql.json(r.content as never)},now())`;
@@ -62,12 +62,12 @@ test("category corrections revise every standard report atomically without selec
     const c = saved!.content;
     assert.equal(c.leadItemId, articleId);
     if (r.kind === "daily") {
-      assert.deepEqual(c.sections, [{ key: "ai-products", label: "产品发布/更新", items: [entry] }]);
-      assert.equal(c.metrics.modelsReleased, 0);
+      assert.deepEqual(c.sections, [{ key: "ai-products", label: "产品动态", items: [entry] }]);
+      assert.equal(c.metrics.modelsReleased, undefined);
       assert.deepEqual(c.highlights, [articleId]);
       assert.equal(c.lead.title, "冻结头条");
     } else {
-      assert.deepEqual(c.themes, [{ key: "ai-products", heading: "产品发布/更新", summary: null, storyRefs: [entry] }]);
+      assert.deepEqual(c.themes, [{ key: "ai-products", heading: "产品动态", summary: null, storyRefs: [entry] }]);
       assert.deepEqual(c.storyOrder, [articleId]);
       assert.equal(c.overview, "保留总述");
     }
@@ -76,8 +76,8 @@ test("category corrections revise every standard report atomically without selec
   assert.equal((await sql`SELECT count(*)::int AS n FROM pgboss.job WHERE name=${QUEUES.digest}`)[0]!.n, digestCount);
   await overrideFields(articleId, { fields: {}, clear: ["category", "tags"], version: 1, reason: "验证撤销纠错" }, "test-category");
   const [restored] = await sql`SELECT content FROM reports WHERE kind='daily' AND key='2097-01-02'`;
-  assert.equal(restored!.content.sections[0].label, "模型发布/更新");
-  assert.equal(restored!.content.metrics.modelsReleased, 1);
+  assert.equal(restored!.content.sections[0].label, "技术创新");
+  assert.equal(restored!.content.metrics.modelsReleased, undefined);
 });
 
 test("a correction keeps the introduction of the section it moves into", async () => {
@@ -90,8 +90,8 @@ test("a correction keeps the introduction of the section it moves into", async (
   const moved = { itemId: articleId, title: "推理工具更新", summary: "工具更新摘要" };
   const other = (n: number, title: string) => ({ itemId: `${articleId}-${n}`, title, summary: `${title}摘要` });
   const themes = [
-    { heading: "模型发布/更新", summary: "本周模型导读", storyRefs: [moved, other(1, "模型甲"), other(2, "模型乙"), other(3, "模型丙")] },
-    { heading: "产品发布/更新", summary: "本周产品导读", storyRefs: [other(4, "产品甲"), other(5, "产品乙"), other(6, "产品丙")] },
+    { heading: "技术创新", summary: "本周模型导读", storyRefs: [moved, other(1, "模型甲"), other(2, "模型乙"), other(3, "模型丙")] },
+    { heading: "产品动态", summary: "本周产品导读", storyRefs: [other(4, "产品甲"), other(5, "产品乙"), other(6, "产品丙")] },
   ];
   await sql`INSERT INTO reports (kind,key,window_start,window_end,content,generated_at)
     VALUES ('weekly','2097-W02',now(),now(),${sql.json({ headline: "冻结头条", leadItemId: articleId, storyOrder: [articleId], overview: "保留总述", themes, metrics: { totalStories: 7 } } as never)},now())`;
@@ -99,5 +99,5 @@ test("a correction keeps the introduction of the section it moves into", async (
   const [saved] = await sql`SELECT content FROM reports WHERE kind='weekly' AND key='2097-W02'`;
   const intros = Object.fromEntries((saved!.content.themes as Array<{ heading: string; summary: string | null }>).map(g => [g.heading, g.summary]));
   // The section it left may name it, so its introduction goes; the target's names only what is still there.
-  assert.deepEqual(intros, { "模型发布/更新": null, "产品发布/更新": "本周产品导读" });
+  assert.deepEqual(intros, { "技术创新": null, "产品动态": "本周产品导读" });
 });
