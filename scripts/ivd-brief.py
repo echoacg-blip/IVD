@@ -1,5 +1,5 @@
 import json
-from datetime import datetime
+from datetime import date, datetime
 from pathlib import Path
 from urllib.parse import urlencode, quote
 from urllib.request import urlopen
@@ -27,6 +27,20 @@ def regulatory():
                  source="FDA 510(k)", url="https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=" + quote(r["k_number"]))
             for r in data["results"] if r.get("device_name") and r.get("k_number")]
 
+def prioritize(item, today):
+    published = item.get("date")
+    try:
+        age = max(0, (today - date.fromisoformat(published)).days)
+    except (ValueError, TypeError):
+        age = 30
+    freshness = max(0, 30 - age)
+    direct_source = item["source"] == "FDA 510(k)"
+    item["score"] = freshness + (20 if direct_source else 10)
+    item["reason"] = ("监管机构原始记录" if direct_source else "科研文献索引") + (
+        " · 近一周发布" if age <= 7 else ""
+    )
+    return item
+
 def main():
     output = Path("docs/briefs")
     output.mkdir(exist_ok=True)
@@ -44,8 +58,8 @@ def main():
     if unavailable and previous.exists():
         saved = json.loads(previous.read_text(encoding="utf-8"))
         items.extend(item for item in saved["items"] if item["source"] in unavailable)
-    ranked = sorted({item["url"]: item for item in items}.values(),
-                    key=lambda item: item["date"] or "", reverse=True)
+    unique = {item["url"]: prioritize(item, datetime.fromisoformat(date).date()) for item in items}
+    ranked = sorted(unique.values(), key=lambda item: (item["score"], item["date"] or "", item["url"]), reverse=True)
     payload = dict(date=date, items=ranked, unavailable=unavailable)
     previous.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
     dates = sorted((p.stem for p in output.glob("????-??-??.json")), reverse=True)
