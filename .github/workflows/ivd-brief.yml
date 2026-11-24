@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - if: github.event_name != 'push'
+      - name: Refresh briefs
         run: python scripts/ivd-brief.py
       - run: |
           git add docs/briefs
