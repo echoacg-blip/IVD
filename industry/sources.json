@@ -12,7 +12,7 @@
         "titlePaths": [
           "title"
         ],
-        "urlTemplate": "https://doi.org/{raw:doi}",
+        "urlTemplate": "https://doi.org/{doi}",
         "publishedAtPath": "firstPublicationDate",
         "externalIdPath": "doi",
         "summaryPaths": [
@@ -100,7 +100,8 @@
         ],
         "_aihot": {
           "initialBackfillLimit": 8
-        }
+        },
+        "urlTemplateFallback": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpma/pma.cfm?ID={pma_number}"
       },
       "tier": "T1",
       "participation_mode": "editorial",
