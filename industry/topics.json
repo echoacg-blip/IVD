@@ -1,6 +1,11 @@
 {
   "groups": [
     {
+      "key": "company",
+      "name": "企业动态",
+      "blurb": "按资料实际涉及的诊断企业浏览"
+    },
+    {
       "key": "field",
       "name": "技术方向",
       "blurb": "按诊断技术和实验室应用浏览"
@@ -12,6 +17,24 @@
     }
   ],
   "topics": [
+    {
+      "slug": "roche-diagnostics",
+      "name": "罗氏诊断",
+      "group": "company",
+      "entityId": "roche-diagnostics"
+    },
+    {
+      "slug": "abbott-diagnostics",
+      "name": "雅培诊断",
+      "group": "company",
+      "entityId": "abbott-diagnostics"
+    },
+    {
+      "slug": "bd-diagnostics",
+      "name": "BD 诊断",
+      "group": "company",
+      "entityId": "bd-diagnostics"
+    },
     {
       "slug": "poct",
       "name": "即时检测",
