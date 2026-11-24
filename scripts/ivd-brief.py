@@ -40,7 +40,10 @@ def research():
         "format": "json", "pageSize": 12,
     })
     return [dict(title=r["title"], date=r.get("firstPublicationDate"), category=research_category(r["title"]),
-                 source="Europe PMC", summary=research_summary(r), url="https://doi.org/" + quote(r["doi"], safe="/"))
+                 source="Europe PMC", summary=research_summary(r),
+                 related=([dict(label="PubMed", url="https://pubmed.ncbi.nlm.nih.gov/" + r["pmid"] + "/")]
+                          if str(r.get("pmid", "")).isdigit() else []),
+                 url="https://doi.org/" + quote(r["doi"], safe="/"))
             for r in data["resultList"]["result"] if r.get("title") and r.get("doi")]
 
 def regulatory():
