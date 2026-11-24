@@ -39,6 +39,11 @@ def prioritize(item, today):
     item["reason"] = ("监管机构原始记录" if direct_source else "科研文献索引") + (
         " · 近一周发布" if age <= 7 else ""
     )
+    item["reading_note"] = (
+        "查看 FDA 原始记录中的申请方、器械类别和决定日期，了解此次更新涉及的产品。"
+        if direct_source else
+        "阅读原文时可先看研究人群、对照方法和验证范围，判断结论是否适用于你的应用场景。"
+    )
     return item
 
 def main():
