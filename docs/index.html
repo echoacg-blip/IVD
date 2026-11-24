@@ -63,6 +63,15 @@ async function showEdition() {
         reason.textContent = '入选依据 · ' + item.reason;
         card.append(reason);
       }
+      for (const related of item.related || []) {
+        if (!/^https:\/\/pubmed\.ncbi\.nlm\.nih\.gov\/\d+\/$/.test(related.url)) continue;
+        const sourceLink = document.createElement('a');
+        sourceLink.href = related.url;
+        sourceLink.textContent = 'PubMed 记录';
+        const sources = document.createElement('p');
+        sources.append(sourceLink);
+        card.append(sources);
+      }
       editionItems.append(card);
     }
     editionStatus.textContent = (items.length ? '显示 ' + items.length + ' / ' + matches.length + ' 条动态' : '本期暂无该栏目动态') +
