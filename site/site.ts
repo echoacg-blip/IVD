@@ -317,7 +317,16 @@ export const FEED_COPY = {
  */
 export const PUBLIC_CATEGORIES = {
   merge: {},
-  feedLabels: {},
+  feedLabels: {
+    "ai-models": "IVD 技术创新",
+    "ai-products": "IVD 产品动态",
+    industry: "IVD 企业与行业",
+    paper: "IVD 前沿科研",
+    "ivd-regulation": "IVD 政策标准",
+    "ivd-clinical": "IVD 临床学术",
+    tip: "IVD 服务与实践",
+    opinion: "IVD 行业解读",
+  },
 } as const;
 
 /** “AI 日报”这类说法：行业词和名词之间，英文词加空格，中文词不加。 */
