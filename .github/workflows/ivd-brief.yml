@@ -28,18 +28,6 @@ jobs:
       - name: Refresh briefs
         if: github.event_name != 'push'
         run: python scripts/ivd-brief.py
-      - name: Save refreshed briefs
-        if: github.event_name != 'push'
-        run: |
-          git add docs/briefs
-          if git diff --cached --quiet; then exit 0; fi
-          git config user.name github-actions
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "Refresh IVD brief"
-          if ! git push; then
-            git pull --rebase origin main
-            git push
-          fi
       - name: Verify brief archive
         run: |
           python - <<'PY'
@@ -62,6 +50,18 @@ jobs:
                       raise SystemExit(f"Incomplete entry in edition: {day}")
           print(f"Verified {len(dates)} editions")
           PY
+      - name: Save refreshed briefs
+        if: github.event_name != 'push'
+        run: |
+          git add docs/briefs
+          if git diff --cached --quiet; then exit 0; fi
+          git config user.name github-actions
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Refresh IVD brief"
+          if ! git push; then
+            git pull --rebase origin main
+            git push
+          fi
       - uses: actions/upload-pages-artifact@v3
         with:
           path: docs
