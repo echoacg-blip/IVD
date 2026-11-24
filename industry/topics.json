@@ -75,6 +75,30 @@
       "tags": [
         "政策/监管"
       ]
+    },
+    {
+      "slug": "clinical-validation",
+      "name": "临床验证",
+      "group": "field",
+      "tags": [
+        "临床验证"
+      ]
+    },
+    {
+      "slug": "quality-control",
+      "name": "质量控制",
+      "group": "field",
+      "tags": [
+        "质量控制"
+      ]
+    },
+    {
+      "slug": "lab-informatics",
+      "name": "实验室信息化",
+      "group": "field",
+      "tags": [
+        "实验室信息化"
+      ]
     }
   ]
 }
