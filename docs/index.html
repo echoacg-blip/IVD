@@ -73,7 +73,7 @@ async function showEdition() {
     for (const item of items) {
       const card = document.createElement('article');
       const meta = document.createElement('small');
-      meta.textContent = [item.date, item.category, item.source].filter(Boolean).join(' · ');
+      meta.textContent = [item.date, item.category, item.source, item.new_to_edition === true ? '本期新增' : ''].filter(Boolean).join(' · ');
       const heading = document.createElement('h2');
       const link = document.createElement('a');
       link.href = item.url;
