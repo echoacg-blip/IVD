@@ -164,6 +164,13 @@ def main():
         items.extend(item for item in saved["items"] if item["source"] in unavailable)
     unique = {record_key(item): prioritize(item, datetime.fromisoformat(date).date()) for item in items}
     ranked = sorted(unique.values(), key=lambda item: (item["score"], item["date"] or "", item["url"]), reverse=True)
+    earlier = sorted(path for path in output.glob("????-??-??.json") if path.stem < date)
+    previous_keys = set()
+    if earlier:
+        older = json.loads(earlier[-1].read_text(encoding="utf-8"))
+        previous_keys = {record_key(item) for item in older["items"]}
+    for item in ranked:
+        item["new_to_edition"] = record_key(item) not in previous_keys if earlier else None
     payload = dict(date=date, collected_at=collected_at.isoformat(timespec="seconds"),
                    items=ranked, unavailable=unavailable)
     write_feed(output, payload, collected_at)
