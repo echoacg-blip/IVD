@@ -26,12 +26,23 @@ def research():
             for r in data["resultList"]["result"] if r.get("title") and r.get("doi")]
 
 def regulatory():
-    data = get("https://api.fda.gov/device/510k.json", {
-        "search": 'advisory_committee:(CL OR HE)',
-        "sort": "decision_date:desc", "limit": 12,
-    })
+    endpoint = "https://api.fda.gov/device/510k.json"
+    results = []
+    failed = []
+    for committee in ("CL", "HE"):
+        try:
+            data = get(endpoint, {
+                "search": f"advisory_committee:{committee}",
+                "sort": "decision_date:desc", "limit": 8,
+            })
+            results.extend(data["results"])
+        except (OSError, ValueError, KeyError) as error:
+            failed.append(committee)
+            print(f"FDA 510(k) {committee}: {error}")
+    if not results:
+        raise OSError("No FDA records returned for " + ", ".join(failed))
     items = []
-    for record in data["results"]:
+    for record in results:
         name, number = record.get("device_name"), record.get("k_number")
         if not name or not number:
             continue
