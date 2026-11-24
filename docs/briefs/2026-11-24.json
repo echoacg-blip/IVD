@@ -2,12 +2,45 @@
   "date": "2026-11-24",
   "items": [
     {
+      "title": "Genotyping Protocol for Identifying Genetic Risk Markers Associated with Alpha-Gal Syndrome.",
+      "date": "2027-01-01",
+      "category": "前沿科研",
+      "source": "Europe PMC",
+      "summary": "期刊：Methods Mol Biol。作者：Grujić J, Lilić M.。首次发表日期：2027-01-01。",
+      "url": "https://doi.org/10.1007/978-1-0716-5635-8_22",
+      "score": 40,
+      "reason": "科研文献索引 · 近一周发布",
+      "reading_note": "阅读原文时可先看研究人群、对照方法和验证范围，判断结论是否适用于你的应用场景。"
+    },
+    {
+      "title": "Next-Day Salmonella spp. Detection Method Based on Real-Time PCR for Foods.",
+      "date": "2027-01-01",
+      "category": "前沿科研",
+      "source": "Europe PMC",
+      "summary": "期刊：Methods Mol Biol。作者：Rodríguez-Lázaro D, Alves M, Cañete-Reyes Á, Hernández M.。首次发表日期：2027-01-01。",
+      "url": "https://doi.org/10.1007/978-1-0716-5559-7_21",
+      "score": 40,
+      "reason": "科研文献索引 · 近一周发布",
+      "reading_note": "阅读原文时可先看研究人群、对照方法和验证范围，判断结论是否适用于你的应用场景。"
+    },
+    {
       "title": "Loop-Mediated Isothermal Amplification (LAMP) as a Rapid Molecular Tool for Salmonella Detection in Food.",
       "date": "2027-01-01",
       "category": "前沿科研",
       "source": "Europe PMC",
       "summary": "期刊：Methods Mol Biol。作者：Cañete-Reyes Á, Alves M, Rodríguez-Lázaro D.。首次发表日期：2027-01-01。",
       "url": "https://doi.org/10.1007/978-1-0716-5559-7_20",
+      "score": 40,
+      "reason": "科研文献索引 · 近一周发布",
+      "reading_note": "阅读原文时可先看研究人群、对照方法和验证范围，判断结论是否适用于你的应用场景。"
+    },
+    {
+      "title": "&lt;i&gt;Candida auris&lt;/i&gt; colonization or infection in the ear of four patients with chronic otitis externa: A case series and literature review.",
+      "date": "2026-12-15",
+      "category": "前沿科研",
+      "source": "Europe PMC",
+      "summary": "期刊：Curr Med Mycol。作者：Safari F, Aboutalebian S, Khaledian T, Nasri E, Ahmadikia K.。首次发表日期：2026-12-15。",
+      "url": "https://doi.org/10.22034/cmm.2025.345406.1658",
       "score": 40,
       "reason": "科研文献索引 · 近一周发布",
       "reading_note": "阅读原文时可先看研究人群、对照方法和验证范围，判断结论是否适用于你的应用场景。"
@@ -35,6 +68,61 @@
       "reading_note": "阅读原文时可先看研究人群、对照方法和验证范围，判断结论是否适用于你的应用场景。"
     },
     {
+      "title": "A Narrative Review on the Recent Advances in Pseudomonas aeruginosa Transmission: Focus on Hospital Environments.",
+      "date": "2026-12-01",
+      "category": "前沿科研",
+      "source": "Europe PMC",
+      "summary": "期刊：Microbiologyopen。作者：Vandu CD, Okon MB, Fasogbon IV, Musyoka AM, Makena W, Ikuomola EO, Swase DT, Agwu E, Aja PM.。首次发表日期：2026-12-01。",
+      "url": "https://doi.org/10.1002/mbo3.70455",
+      "score": 40,
+      "reason": "科研文献索引 · 近一周发布",
+      "reading_note": "阅读原文时可先看研究人群、对照方法和验证范围，判断结论是否适用于你的应用场景。"
+    },
+    {
+      "title": "In-Vitro Activity of Ceftazidime-Avibactam and Comparator Agents Against Carbapenem-Resistant Gram-Negative Isolates at a Tertiary Care Hospital in Lahore, Pakistan: A Cross-Sectional Study.",
+      "date": "2026-12-01",
+      "category": "前沿科研",
+      "source": "Europe PMC",
+      "summary": "期刊：Microbiologyopen。作者：Yunus F, Rehman OU, Murtaza M, Mazhar S, Samadi A, Raza AA.。首次发表日期：2026-12-01。",
+      "url": "https://doi.org/10.1002/mbo3.70449",
+      "score": 40,
+      "reason": "科研文献索引 · 近一周发布",
+      "reading_note": "阅读原文时可先看研究人群、对照方法和验证范围，判断结论是否适用于你的应用场景。"
+    },
+    {
+      "title": "Value of a Genetic Diagnosis: A Concept Analysis.",
+      "date": "2026-12-01",
+      "category": "前沿科研",
+      "source": "Europe PMC",
+      "summary": "期刊：J Genet Couns。作者：Wiedower J, Smith HS, Farrell CL, Parker V, Trammel SC.。首次发表日期：2026-12-01。",
+      "url": "https://doi.org/10.1002/jgc4.70299",
+      "score": 40,
+      "reason": "科研文献索引 · 近一周发布",
+      "reading_note": "阅读原文时可先看研究人群、对照方法和验证范围，判断结论是否适用于你的应用场景。"
+    },
+    {
+      "title": "Concordance of Microbiological and Histopathological Examination of Bone Biopsies in Diagnosing Diabetic Foot Osteomyelitis, a Systematic Review.",
+      "date": "2026-12-01",
+      "category": "前沿科研",
+      "source": "Europe PMC",
+      "summary": "期刊：J Foot Ankle Res。作者：Kadiri L, Maher A, Bridgen A.。首次发表日期：2026-12-01。",
+      "url": "https://doi.org/10.1002/jfa2.70223",
+      "score": 40,
+      "reason": "科研文献索引 · 近一周发布",
+      "reading_note": "阅读原文时可先看研究人群、对照方法和验证范围，判断结论是否适用于你的应用场景。"
+    },
+    {
+      "title": "Comparative Evaluation of NaOCl/EDTA-Based Multi-Step Protocol Versus Triton-Based Single-Step Protocol on Reduction of Bacterial DNA and RNA Levels: A Randomized Controlled Clinical Trial.",
+      "date": "2026-12-01",
+      "category": "前沿科研",
+      "source": "Europe PMC",
+      "summary": "期刊：Clin Exp Dent Res。作者：Khaleefah OT, Zubidi MA, Elshazli AH, Gomaa MA.。首次发表日期：2026-12-01。",
+      "url": "https://doi.org/10.1002/cre2.70514",
+      "score": 40,
+      "reason": "科研文献索引 · 近一周发布",
+      "reading_note": "阅读原文时可先看研究人群、对照方法和验证范围，判断结论是否适用于你的应用场景。"
+    },
+    {
       "title": "Diagnostic accuracy of molecular and non-molecular assays for urogenital schistosomiasis in Zambian schoolchildren: a latent class and composite reference standard analysis",
       "date": "2026-11-23",
       "category": "前沿科研",
@@ -42,94 +130,6 @@
       "summary": "作者：Mutengo MM, Crego-Vicente B, Muro A, Mwansa J, Lodh N, Perteguer MJ, Carmena D, Fernández-Soto P, Sotillo J.。首次发表日期：2026-11-23。",
       "url": "https://doi.org/10.21203/rs.3.rs-11691498/v1",
       "score": 39,
-      "reason": "科研文献索引 · 近一周发布",
-      "reading_note": "阅读原文时可先看研究人群、对照方法和验证范围，判断结论是否适用于你的应用场景。"
-    },
-    {
-      "title": "Analytical agreement and classification performance of two point-of-care devices for lipid panel measurement",
-      "date": "2026-11-23",
-      "category": "前沿科研",
-      "source": "Europe PMC",
-      "summary": "作者：Breternitz BS, Padula RS, Ferrer MLP, Freitas PC, Gouvea EdCDP, Menezes-Júnior L, Enriquez-Martinez OG, Cardoso LdO, Duim E.。首次发表日期：2026-11-23。",
-      "url": "https://doi.org/10.21203/rs.3.rs-11233150/v1",
-      "score": 39,
-      "reason": "科研文献索引 · 近一周发布",
-      "reading_note": "阅读原文时可先看研究人群、对照方法和验证范围，判断结论是否适用于你的应用场景。"
-    },
-    {
-      "title": "Profiling host-pathogen dynamic in a 3D human epidermal infection model and real-time sensing of IL-1α as a tissue-damage biomarker",
-      "date": "2026-11-20",
-      "category": "前沿科研",
-      "source": "Europe PMC",
-      "summary": "作者：Parlak O, Yang L, Calvo DV, Xu S, Moura M, Liao K, Zink A, Kannt A, Ziegler N, Michel M, BADIOU C, Martin-Rodriguez AJ, Hassanpouramiri M.。首次发表日期：2026-11-20。",
-      "url": "https://doi.org/10.64898/2026.11.19.767804",
-      "score": 36,
-      "reason": "科研文献索引 · 近一周发布",
-      "reading_note": "阅读原文时可先看研究人群、对照方法和验证范围，判断结论是否适用于你的应用场景。"
-    },
-    {
-      "title": "From operational analysis to implementable emergency department throughput interventions: Integrating Theory of Constraints and Design Science Research",
-      "date": "2026-11-20",
-      "category": "前沿科研",
-      "source": "Europe PMC",
-      "summary": "作者：Sarimo S, Koivistoinen T, Lukkarinen T, Palomäki A, Torkki P.。首次发表日期：2026-11-20。",
-      "url": "https://doi.org/10.21203/rs.3.rs-10878718/v1",
-      "score": 36,
-      "reason": "科研文献索引 · 近一周发布",
-      "reading_note": "阅读原文时可先看研究人群、对照方法和验证范围，判断结论是否适用于你的应用场景。"
-    },
-    {
-      "title": "Moving diagnostics upstream: prehospital blood gas analysis is associated with safe community care and improved patient selection for hospital admission.",
-      "date": "2026-11-20",
-      "category": "前沿科研",
-      "source": "Europe PMC",
-      "summary": "期刊：Emerg Med J。作者：Lux H, Roth J, Hemmer S, Lang S, Lewejohann JC, Bauer M, Brock J, Dickmann P.。首次发表日期：2026-11-20。",
-      "url": "https://doi.org/10.1136/emermed-2026-216096",
-      "score": 36,
-      "reason": "科研文献索引 · 近一周发布",
-      "reading_note": "阅读原文时可先看研究人群、对照方法和验证范围，判断结论是否适用于你的应用场景。"
-    },
-    {
-      "title": "Covalent immobilization of blood typing antibodies on multilayer porous membranes for stable and rapid ABO blood typing immunodetection.",
-      "date": "2026-11-20",
-      "category": "前沿科研",
-      "source": "Europe PMC",
-      "summary": "期刊：Mikrochim Acta。作者：Yang H, Liu Z, Wang H, Xu B, Yang M.。首次发表日期：2026-11-20。",
-      "url": "https://doi.org/10.1007/s00604-026-08570-x",
-      "score": 36,
-      "reason": "科研文献索引 · 近一周发布",
-      "reading_note": "阅读原文时可先看研究人群、对照方法和验证范围，判断结论是否适用于你的应用场景。"
-    },
-    {
-      "title": "Integrated SERS immunosensing chip for ultrasensitive detection of multiple breast cancer biomarkers (CEA and HER2) in human serum.",
-      "date": "2026-11-20",
-      "category": "前沿科研",
-      "source": "Europe PMC",
-      "summary": "期刊：Mikrochim Acta。作者：Liu Z, Fu C, Wang L, Huang Z, Chen P, Wang L, Lin X, Feng S.。首次发表日期：2026-11-20。",
-      "url": "https://doi.org/10.1007/s00604-026-08561-y",
-      "score": 36,
-      "reason": "科研文献索引 · 近一周发布",
-      "reading_note": "阅读原文时可先看研究人群、对照方法和验证范围，判断结论是否适用于你的应用场景。"
-    },
-    {
-      "title": "Patient's self-monitoring of urate during allopurinol titration in primary care: a feasibility study.",
-      "date": "2026-11-19",
-      "category": "前沿科研",
-      "source": "Europe PMC",
-      "summary": "期刊：Scand J Prim Health Care。作者：Sedelius H, Svärd A, Joelsson A, Nilsagård Y, Dehlin M, Tistad M.。首次发表日期：2026-11-19。",
-      "url": "https://doi.org/10.1080/02813432.2026.2764574",
-      "score": 35,
-      "reason": "科研文献索引 · 近一周发布",
-      "reading_note": "阅读原文时可先看研究人群、对照方法和验证范围，判断结论是否适用于你的应用场景。"
-    },
-    {
-      "title": "Recent progress and challenges in Schiff base-based optical chemosensors.",
-      "date": "2026-11-19",
-      "category": "前沿科研",
-      "source": "Europe PMC",
-      "summary": "期刊：RSC Adv。作者：Sefid-Sefidehkhan Y, Hasanzadeh M, Jouyban A.。首次发表日期：2026-11-19。",
-      "url": "https://doi.org/10.1039/d6ra08395a",
-      "score": 35,
       "reason": "科研文献索引 · 近一周发布",
       "reading_note": "阅读原文时可先看研究人群、对照方法和验证范围，判断结论是否适用于你的应用场景。"
     },
