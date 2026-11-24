@@ -2,7 +2,7 @@ import json
 from datetime import date, datetime
 from pathlib import Path
 from time import sleep
-from urllib.parse import urlencode, quote
+from urllib.parse import urlencode, quote, unquote, urlsplit
 from urllib.request import urlopen
 from zoneinfo import ZoneInfo
 
@@ -83,6 +83,12 @@ def prioritize(item, today):
     )
     return item
 
+def record_key(item):
+    url = urlsplit(item["url"])
+    if url.hostname in {"doi.org", "dx.doi.org"}:
+        return "doi:" + unquote(url.path.lstrip("/")).strip().casefold()
+    return item["url"]
+
 def main():
     output = Path("docs/briefs")
     output.mkdir(exist_ok=True)
@@ -103,7 +109,7 @@ def main():
     if unavailable and previous.exists():
         saved = json.loads(previous.read_text(encoding="utf-8"))
         items.extend(item for item in saved["items"] if item["source"] in unavailable)
-    unique = {item["url"]: prioritize(item, datetime.fromisoformat(date).date()) for item in items}
+    unique = {record_key(item): prioritize(item, datetime.fromisoformat(date).date()) for item in items}
     ranked = sorted(unique.values(), key=lambda item: (item["score"], item["date"] or "", item["url"]), reverse=True)
     payload = dict(date=date, items=ranked, unavailable=unavailable)
     previous.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
