@@ -1,6 +1,6 @@
 {
   "date": "2026-11-24",
-  "collected_at": "2026-11-24T17:31:32+08:00",
+  "collected_at": "2026-11-24T17:32:23+08:00",
   "items": [
     {
       "title": "Genotyping Protocol for Identifying Genetic Risk Markers Associated with Alpha-Gal Syndrome.",
@@ -223,5 +223,7 @@
       "reading_note": "查看 FDA 原始记录中的申请方、器械类别和决定日期，了解此次更新涉及的产品。"
     }
   ],
-  "unavailable": []
+  "unavailable": [
+    "Europe PMC"
+  ]
 }
