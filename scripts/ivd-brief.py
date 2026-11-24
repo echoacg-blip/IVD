@@ -20,7 +20,7 @@ def research():
 
 def regulatory():
     data = get("https://api.fda.gov/device/510k.json", {
-        "search": 'medical_specialty_description:"Clinical Chemistry" OR medical_specialty_description:"Hematology"',
+        "search": 'advisory_committee:(CL OR HE)',
         "sort": "decision_date:desc", "limit": 12,
     })
     items = []
@@ -29,7 +29,7 @@ def regulatory():
         if not name or not number:
             continue
         fields = [f"FDA 510(k) 记录 {number}"]
-        for label, key in (("申请方", "applicant"), ("器械专业类别", "medical_specialty_description"),
+        for label, key in (("申请方", "applicant"), ("审查专业代码", "advisory_committee"),
                            ("决定日期", "decision_date")):
             if record.get(key):
                 fields.append(f"{label}：{record[key]}")
