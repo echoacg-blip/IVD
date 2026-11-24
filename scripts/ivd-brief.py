@@ -112,14 +112,16 @@ def main():
         return
     if not items:
         raise SystemExit("No source returned publishable data")
-    date = datetime.now(ZoneInfo("Asia/Shanghai")).date().isoformat()
+    collected_at = datetime.now(ZoneInfo("Asia/Shanghai"))
+    date = collected_at.date().isoformat()
     previous = output / f"{date}.json"
     if unavailable and previous.exists():
         saved = json.loads(previous.read_text(encoding="utf-8"))
         items.extend(item for item in saved["items"] if item["source"] in unavailable)
     unique = {record_key(item): prioritize(item, datetime.fromisoformat(date).date()) for item in items}
     ranked = sorted(unique.values(), key=lambda item: (item["score"], item["date"] or "", item["url"]), reverse=True)
-    payload = dict(date=date, items=ranked, unavailable=unavailable)
+    payload = dict(date=date, collected_at=collected_at.isoformat(timespec="seconds"),
+                   items=ranked, unavailable=unavailable)
     previous.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
     dates = sorted((p.stem for p in output.glob("????-??-??.json")), reverse=True)
     (output / "index.json").write_text(json.dumps(dates), encoding="utf-8")
