@@ -91,6 +91,9 @@ export const TAG_DISPLAY: Readonly<Record<string, string | null>> = {
  * 所有这些名字都用来认出说的是哪家公司，比如把事实的主体对到发布方。
  */
 export const ENTITIES: Record<string, { name: string; displayTag: string | null; aliases: string[]; orgNames?: string[]; otherNames?: string[] }> = {
+  "roche-diagnostics": { name: "罗氏诊断", displayTag: null, aliases: ["Roche Diagnostics","罗氏诊断"], orgNames: ["Roche Diagnostics","罗氏诊断"] },
+  "abbott-diagnostics": { name: "雅培诊断", displayTag: null, aliases: ["Abbott Diagnostics","Abbott Molecular","雅培诊断"], orgNames: ["Abbott Diagnostics","Abbott Molecular","雅培诊断"] },
+  "bd-diagnostics": { name: "BD 诊断", displayTag: null, aliases: ["BD Diagnostics","Becton Dickinson","BD 诊断"], orgNames: ["BD Diagnostics","Becton Dickinson","BD 诊断"] },
   "world-labs": { name: "World Labs", displayTag: null, aliases: ["World Labs"] },
   "thinking-machines": { name: "Thinking Machines Lab", displayTag: null, aliases: ["Thinking Machines"] },
   amd: { name: "AMD", displayTag: null, aliases: ["AMD", "Advanced Micro Devices"] },
