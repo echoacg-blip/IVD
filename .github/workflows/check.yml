@@ -6,6 +6,8 @@ name: Check
 on:
   push:
     branches: [main]
+    paths-ignore:
+      - 'docs/briefs/**'
   pull_request:
   workflow_dispatch:
 
@@ -14,7 +16,7 @@ permissions:
 
 concurrency:
   group: check-${{ github.event.pull_request.number || github.ref }}
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   check:
