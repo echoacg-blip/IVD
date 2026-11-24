@@ -1,6 +1,6 @@
 {
   "date": "2026-11-24",
-  "collected_at": "2026-11-24T17:34:34+08:00",
+  "collected_at": "2026-11-24T17:38:46+08:00",
   "items": [
     {
       "title": "Genotyping Protocol for Identifying Genetic Risk Markers Associated with Alpha-Gal Syndrome.",
@@ -202,12 +202,100 @@
       "reading_note": "阅读原文时可先看研究人群、对照方法和验证范围，判断结论是否适用于你的应用场景。"
     },
     {
+      "title": "Oncomine Dx Express Test",
+      "date": "2026-11-04",
+      "category": "产品动态",
+      "source": "FDA PMA",
+      "summary": "FDA PMA 记录 P240040S008。申请方：Life Technologies Corporation。决定日期：2026-11-04。",
+      "url": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpma/pma.cfm?ID=P240040S008",
+      "score": 30,
+      "reason": "监管机构原始记录",
+      "reading_note": "查看 FDA 原始记录中的申请方、器械类别和决定日期，了解此次更新涉及的产品。"
+    },
+    {
+      "title": "Roche cobas® KRAS Mutation Test",
+      "date": "2026-11-04",
+      "category": "产品动态",
+      "source": "FDA PMA",
+      "summary": "FDA PMA 记录 P140023S034。申请方：Roche Molecular Systems, Inc.。决定日期：2026-11-04。",
+      "url": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpma/pma.cfm?ID=P140023S034",
+      "score": 30,
+      "reason": "监管机构原始记录",
+      "reading_note": "查看 FDA 原始记录中的申请方、器械类别和决定日期，了解此次更新涉及的产品。"
+    },
+    {
+      "title": "Roche cobas® EGFR Mutation Test, v2.0",
+      "date": "2026-11-04",
+      "category": "产品动态",
+      "source": "FDA PMA",
+      "summary": "FDA PMA 记录 P120019S045。申请方：Roche。决定日期：2026-11-04。",
+      "url": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpma/pma.cfm?ID=P120019S045",
+      "score": 30,
+      "reason": "监管机构原始记录",
+      "reading_note": "查看 FDA 原始记录中的申请方、器械类别和决定日期，了解此次更新涉及的产品。"
+    },
+    {
+      "title": "Roche cobas® BRAF V600 Mutation Test",
+      "date": "2026-11-04",
+      "category": "产品动态",
+      "source": "FDA PMA",
+      "summary": "FDA PMA 记录 P110020S046。申请方：Roche Molecular Systems, Inc.。决定日期：2026-11-04。",
+      "url": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpma/pma.cfm?ID=P110020S046",
+      "score": 30,
+      "reason": "监管机构原始记录",
+      "reading_note": "查看 FDA 原始记录中的申请方、器械类别和决定日期，了解此次更新涉及的产品。"
+    },
+    {
       "title": "Sonoclot Coagulation & Platelet Function Analyzer System with Sonoclot Viewer (SCP1); Sonoclot Coagulation & Platelet Function Analzyer System with Sonoclot Viewer (SCP2); Sonoclot Coagulation Analyzer System with Sonoclot Viewer (SC1)",
       "date": "2026-10-27",
       "category": "产品动态",
       "source": "FDA 510(k)",
       "summary": "FDA 510(k) 记录 K260909。申请方：Sienco, Inc.。审查专业代码：HE。决定日期：2026-10-27。",
       "url": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K260909",
+      "score": 22,
+      "reason": "监管机构原始记录",
+      "reading_note": "查看 FDA 原始记录中的申请方、器械类别和决定日期，了解此次更新涉及的产品。"
+    },
+    {
+      "title": "cobas® EZH2 Mutation Test",
+      "date": "2026-10-27",
+      "category": "产品动态",
+      "source": "FDA PMA",
+      "summary": "FDA PMA 记录 P200014S012。申请方：Roche Molecular System, Inc.。决定日期：2026-10-27。",
+      "url": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpma/pma.cfm?ID=P200014S012",
+      "score": 22,
+      "reason": "监管机构原始记录",
+      "reading_note": "查看 FDA 原始记录中的申请方、器械类别和决定日期，了解此次更新涉及的产品。"
+    },
+    {
+      "title": "cobas® KRAS Mutation Test",
+      "date": "2026-10-27",
+      "category": "产品动态",
+      "source": "FDA PMA",
+      "summary": "FDA PMA 记录 P140023S033。申请方：Roche Molecular Systems, Inc.。决定日期：2026-10-27。",
+      "url": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpma/pma.cfm?ID=P140023S033",
+      "score": 22,
+      "reason": "监管机构原始记录",
+      "reading_note": "查看 FDA 原始记录中的申请方、器械类别和决定日期，了解此次更新涉及的产品。"
+    },
+    {
+      "title": "cobas® BRAF V600 Mutation Test",
+      "date": "2026-10-27",
+      "category": "产品动态",
+      "source": "FDA PMA",
+      "summary": "FDA PMA 记录 P110020S045。申请方：Roche Molecular Systems, Inc.。决定日期：2026-10-27。",
+      "url": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpma/pma.cfm?ID=P110020S045",
+      "score": 22,
+      "reason": "监管机构原始记录",
+      "reading_note": "查看 FDA 原始记录中的申请方、器械类别和决定日期，了解此次更新涉及的产品。"
+    },
+    {
+      "title": "cobas® HPV",
+      "date": "2026-10-27",
+      "category": "产品动态",
+      "source": "FDA PMA",
+      "summary": "FDA PMA 记录 P100020S066。申请方：Roche Molecular Systems, Inc.。决定日期：2026-10-27。",
+      "url": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpma/pma.cfm?ID=P100020S066",
       "score": 22,
       "reason": "监管机构原始记录",
       "reading_note": "查看 FDA 原始记录中的申请方、器械类别和决定日期，了解此次更新涉及的产品。"
