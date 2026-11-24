@@ -40,10 +40,14 @@ def main():
     if not items:
         raise SystemExit("No source returned publishable data")
     date = datetime.now(ZoneInfo("Asia/Shanghai")).date().isoformat()
+    previous = output / f"{date}.json"
+    if unavailable and previous.exists():
+        saved = json.loads(previous.read_text(encoding="utf-8"))
+        items.extend(item for item in saved["items"] if item["source"] in unavailable)
     ranked = sorted({item["url"]: item for item in items}.values(),
                     key=lambda item: item["date"] or "", reverse=True)
     payload = dict(date=date, items=ranked, unavailable=unavailable)
-    (output / f"{date}.json").write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+    previous.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
     dates = sorted((p.stem for p in output.glob("????-??-??.json")), reverse=True)
     (output / "index.json").write_text(json.dumps(dates), encoding="utf-8")
 
