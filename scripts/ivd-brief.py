@@ -1,13 +1,20 @@
 import json
 from datetime import date, datetime
 from pathlib import Path
+from time import sleep
 from urllib.parse import urlencode, quote
 from urllib.request import urlopen
 from zoneinfo import ZoneInfo
 
 def get(url, query):
-    with urlopen(url + "?" + urlencode(query), timeout=25) as response:
-        return json.load(response)
+    for attempt in range(2):
+        try:
+            with urlopen(url + "?" + urlencode(query), timeout=20) as response:
+                return json.load(response)
+        except OSError:
+            if attempt == 1:
+                raise
+            sleep(3)
 
 def research():
     data = get("https://www.ebi.ac.uk/europepmc/webservices/rest/search", {
@@ -67,6 +74,9 @@ def main():
         except (OSError, ValueError, KeyError) as error:
             print(f"{source}: {error}")
             unavailable.append(source)
+    if not items and (output / "index.json").is_file():
+        print("No new data; publishing the existing archive unchanged.")
+        return
     if not items:
         raise SystemExit("No source returned publishable data")
     date = datetime.now(ZoneInfo("Asia/Shanghai")).date().isoformat()
