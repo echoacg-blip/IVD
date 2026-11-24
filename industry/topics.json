@@ -21,19 +21,33 @@
       "slug": "roche-diagnostics",
       "name": "罗氏诊断",
       "group": "company",
-      "entityId": "roche-diagnostics"
+      "entityId": "roche-diagnostics",
+      "aliases": [
+        "Roche Diagnostics"
+      ],
+      "definition": "追踪罗氏诊断的产品、注册及企业动态。"
     },
     {
       "slug": "abbott-diagnostics",
       "name": "雅培诊断",
       "group": "company",
-      "entityId": "abbott-diagnostics"
+      "entityId": "abbott-diagnostics",
+      "aliases": [
+        "Abbott Diagnostics",
+        "Abbott Molecular"
+      ],
+      "definition": "追踪雅培诊断的产品、注册及企业动态。"
     },
     {
       "slug": "bd-diagnostics",
       "name": "BD 诊断",
       "group": "company",
-      "entityId": "bd-diagnostics"
+      "entityId": "bd-diagnostics",
+      "aliases": [
+        "BD Diagnostics",
+        "Becton Dickinson"
+      ],
+      "definition": "追踪BD 诊断的产品、注册及企业动态。"
     },
     {
       "slug": "poct",
@@ -41,7 +55,8 @@
       "group": "field",
       "tags": [
         "即时检测"
-      ]
+      ],
+      "definition": "汇集即时检测相关的体外诊断动态。"
     },
     {
       "slug": "molecular-diagnostics",
@@ -49,7 +64,8 @@
       "group": "field",
       "tags": [
         "分子诊断"
-      ]
+      ],
+      "definition": "汇集分子诊断相关的体外诊断动态。"
     },
     {
       "slug": "immunodiagnostics",
@@ -57,7 +73,8 @@
       "group": "field",
       "tags": [
         "免疫诊断"
-      ]
+      ],
+      "definition": "汇集免疫诊断相关的体外诊断动态。"
     },
     {
       "slug": "lab-automation",
@@ -65,7 +82,8 @@
       "group": "field",
       "tags": [
         "检验自动化"
-      ]
+      ],
+      "definition": "汇集检验自动化相关的体外诊断动态。"
     },
     {
       "slug": "performance-evaluation",
@@ -73,7 +91,8 @@
       "group": "field",
       "tags": [
         "性能评价"
-      ]
+      ],
+      "definition": "汇集性能评价相关的体外诊断动态。"
     },
     {
       "slug": "ivd-research",
@@ -81,7 +100,8 @@
       "group": "genre",
       "tags": [
         "论文/研究"
-      ]
+      ],
+      "definition": "汇集前沿科研相关的体外诊断动态。"
     },
     {
       "slug": "ivd-products",
@@ -89,7 +109,8 @@
       "group": "genre",
       "tags": [
         "产品更新"
-      ]
+      ],
+      "definition": "汇集产品动态相关的体外诊断动态。"
     },
     {
       "slug": "ivd-regulation",
@@ -97,7 +118,8 @@
       "group": "genre",
       "tags": [
         "政策/监管"
-      ]
+      ],
+      "definition": "汇集政策监管相关的体外诊断动态。"
     },
     {
       "slug": "clinical-validation",
@@ -105,7 +127,8 @@
       "group": "field",
       "tags": [
         "临床验证"
-      ]
+      ],
+      "definition": "汇集临床验证相关的体外诊断动态。"
     },
     {
       "slug": "quality-control",
@@ -113,7 +136,8 @@
       "group": "field",
       "tags": [
         "质量控制"
-      ]
+      ],
+      "definition": "汇集质量控制相关的体外诊断动态。"
     },
     {
       "slug": "lab-informatics",
@@ -121,7 +145,8 @@
       "group": "field",
       "tags": [
         "实验室信息化"
-      ]
+      ],
+      "definition": "汇集实验室信息化相关的体外诊断动态。"
     }
   ]
 }
