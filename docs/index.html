@@ -9,6 +9,8 @@
 <aside id="sources"><h2>公开信源</h2><ul><li><a href="https://europepmc.org/">Europe PMC</a></li><li><a href="https://www.nmpa.gov.cn/">国家药品监督管理局</a></li><li><a href="https://www.fda.gov/medical-devices/products-and-medical-procedures/in-vitro-diagnostics">FDA 体外诊断</a></li><li><a href="https://www.nsfc.gov.cn/">国家自然科学基金委</a></li></ul></aside></div></main>
 <script>
 const edition = document.querySelector('#edition');
+const briefParams = new URLSearchParams(location.search);
+let sharedCategory = briefParams.get('category');
 const editionView = document.querySelector('#edition-view');
 const editionCategory = document.querySelector('#edition-category');
 const editionStatus = document.querySelector('#edition-status');
@@ -24,10 +26,18 @@ async function showEdition() {
     const brief = await readBrief(date);
     if (edition.value !== date) return;
     editionItems.replaceChildren();
-    const selected = editionCategory.value;
+    const selected = sharedCategory ?? editionCategory.value;
+    sharedCategory = null;
     const categories = [...new Set(brief.items.map(item => item.category))].sort();
     editionCategory.replaceChildren(new Option("全部动态", ""), ...categories.map(name => new Option(name, name)));
     editionCategory.value = categories.includes(selected) ? selected : "";
+    const shareUrl = new URL(location.href);
+    shareUrl.searchParams.set('edition', date);
+    if (editionCategory.value) shareUrl.searchParams.set('category', editionCategory.value);
+    else shareUrl.searchParams.delete('category');
+    if (editionView.value === 'all') shareUrl.searchParams.set('view', 'all');
+    else shareUrl.searchParams.delete('view');
+    history.replaceState(null, '', shareUrl);
     const matches = brief.items.filter(item => !editionCategory.value || item.category === editionCategory.value);
     const items = editionView.value === 'top' ? matches.slice(0, 8) : matches;
     for (const item of items) {
@@ -67,6 +77,8 @@ editionCategory.addEventListener('change', () => { if (edition.value) showEditio
 readBrief('index').then(dates => {
   if (!dates.length) throw new Error('Empty archive');
   edition.replaceChildren(...dates.map(date => new Option(date, date)));
+  if (dates.includes(briefParams.get('edition'))) edition.value = briefParams.get('edition');
+  if (briefParams.get('view') === 'all') editionView.value = 'all';
   edition.disabled = false;
   return showEdition();
 }).catch(() => {
