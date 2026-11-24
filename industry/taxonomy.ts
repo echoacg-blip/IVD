@@ -12,12 +12,14 @@
  * feedLabel 是分类 RSS 标题里的名字（不写就用 label）。公开接口、RSS 和 MCP 里要把一类并进另一类发布，写在站点设置里（site/site.ts 的 PUBLIC_CATEGORIES）。
  */
 export const CATEGORIES = [
-  { key: "ai-models", tagColor: "indigo", label: "模型", feedLabel: "AI 模型", section: "模型发布/更新", guide: "模型本身的发布、版本、权重开放、能力或价格变化，以及既有榜单上的模型成绩。公布一次跑分不是发布新基准，也不是教程。" },
-  { key: "ai-products", tagColor: "turquoise", label: "产品", feedLabel: "AI 产品", section: "产品发布/更新", guide: "可使用的 AI 产品、功能、应用、工具、API、平台和工程组件的发布更新。模型厂商发布的推理框架、算子库、硬件适配组件仍是产品，不能因为厂商名归成模型。" },
-  { key: "industry", tagColor: "orange", label: "行业", feedLabel: "行业动态", section: "行业动态", guide: "已发生的公司经营、融资并购、人事、合作、诉讼、政策、真实安全事故及调查进展。新闻由当事人发帖、带有态度，也不因此变成观点。" },
-  { key: "paper", tagColor: "violet", label: "论文", feedLabel: "论文", section: "论文研究", guide: "以新研究方法、实验设计与发现为核心的论文、技术报告、新基准或研究数据集。系统性红队实验属于研究；既有榜单成绩归模型，真实事故的新闻调查归行业。" },
-  { key: "tip", tagColor: "green", label: "教程", section: "技巧与观点", guide: "读者可以照着使用的方法、提示词、工具用法、工程实践复盘与技术讲解。重点是可复用的做法；单纯发布工具归产品，只有态度和预测而无做法归观点。", commentary: true },
-  { key: "opinion", tagColor: "purple", label: "观点", section: "技巧与观点", guide: "重点是作者的解释、判断、主张、预测、评论或访谈观点。讨论市场不自动归行业，作者是名人不自动归观点。", commentary: true },
+  { key: "ai-models", tagColor: "indigo", label: "技术创新", section: "技术创新", guide: "新检测原理、诊断算法或检测技术平台的实质更新。论文以研究发现为主时归前沿科研。" },
+  { key: "ai-products", tagColor: "turquoise", label: "产品动态", section: "产品动态", guide: "体外诊断仪器、试剂和检测项目的上市、功能更新、正式批准及适用范围变更。" },
+  { key: "industry", tagColor: "orange", label: "企业与行业", section: "企业与行业", guide: "IVD 企业的经营、融资并购、合作、供应和组织变化。" },
+  { key: "paper", tagColor: "violet", label: "前沿科研", section: "前沿科研", guide: "以研究设计、诊断性能、临床验证或新发现为核心的论文与技术报告。" },
+  { key: "ivd-regulation", tagColor: "orange", label: "政策标准", section: "政策标准", guide: "监管要求、指南、采购规则、行业标准及跨产品政策变化。单个产品批准归产品动态。" },
+  { key: "ivd-clinical", tagColor: "purple", label: "临床学术", section: "临床学术", guide: "临床指南、共识及检验路径变化。以原创研究结果为重点时归前沿科研。" },
+  { key: "tip", tagColor: "green", label: "服务与实践", section: "服务与实践", guide: "检验自动化、质量管理、技术服务或已有系统的可复用实践。", commentary: true },
+  { key: "opinion", tagColor: "purple", label: "行业解读", section: "行业解读", guide: "围绕 IVD 行业的分析、访谈与评论。", commentary: true },
 ] as const satisfies ReadonlyArray<{ key: string; tagColor: string; label: string; feedLabel?: string; section: string; guide: string; commentary?: true }>;
 
 /**
@@ -25,10 +27,10 @@ export const CATEGORIES = [
  * category 是类别，tag 是标签，两者都对上才算；unit 接在数字后面。
  * 没有这样一类的行业设成 null，报头就不显示这个数。
  */
-export const RELEASE: { category: string; tag: string; unit: string } | null = { category: "ai-models", tag: "模型发布", unit: "个新模型" };
+export const RELEASE: { category: string; tag: string; unit: string } | null = null;
 
 /** 周报月报的总述可以直接写、不必在报道里找到出处的行业通用词（小写）。站名会自动算进去。 */
-export const PLAIN_TERMS: readonly string[] = ["ai", "api", "llm", "gpu", "agi", "ceo", "ipo"];
+export const PLAIN_TERMS: readonly string[] = ["ivd", "poct", "pcr", "fda", "nmpa", "ceo", "ipo"];
 
 /**
  * 内容理解一步给每篇资料判的“内容类型”（写在 prompts/content-understanding.md 里，改了类型要同步改那份提示词）。
