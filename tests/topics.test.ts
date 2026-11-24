@@ -152,13 +152,15 @@ test("a story page names the topics of its reports", async () => {
 });
 
 test("withdrawn articles stay out of lists and counts", async () => {
+  const beforeCount = (await page("roche-diagnostics")).topic.total;
   const kept = await report({ at: hoursAgo(5), title: `罗氏诊断 发布新试剂 ${T}`, subjects: ["roche-diagnostics"] });
   const withdrawn = await report({ at: hoursAgo(4), title: `罗氏诊断 撤回的消息 ${T}`, subjects: ["roche-diagnostics"] });
   await sql`UPDATE publications SET visibility = 'withdrawn' WHERE article_id = ${withdrawn}`;
 
   const data = await page("roche-diagnostics");
-  assert.deepEqual(ids(data.items), [kept]);
-  assert.equal(data.topic.total, 1);
+  assert.ok(ids(data.items).includes(kept));
+  assert.ok(!ids(data.items).includes(withdrawn));
+  assert.equal(data.topic.total, beforeCount + 1);
   const summary = (await listTopicSummaries()).topics.find((t) => t.slug === "roche-diagnostics")!;
   assert.equal(summary.latest?.title, `罗氏诊断 发布新试剂 ${T}`, "the index shows the newest public article");
 });
