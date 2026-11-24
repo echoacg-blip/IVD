@@ -1,1 +1,51 @@
-<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>IVD Horizon</title><style>body{margin:0;background:#f2f6fb;color:#142945;font:17px system-ui,sans-serif}main{max-width:760px;margin:auto;padding:9vh 24px}h1{font-size:clamp(44px,9vw,84px);letter-spacing:-.06em;margin:0}section{background:white;border:1px solid #dbe5f0;border-radius:18px;padding:24px;margin-top:24px}a{color:#1455a6}li{margin:12px 0}</style><main><h1>IVD Horizon</h1><p>全球体外诊断行业资讯与公开信源</p><section><h2>监管与产品</h2><ul><li><a href="https://www.nmpa.gov.cn/">国家药品监督管理局</a></li><li><a href="https://www.fda.gov/medical-devices/products-and-medical-procedures/in-vitro-diagnostics">FDA 体外诊断</a></li></ul></section><section><h2>科研与临床</h2><ul><li><a href="https://pubmed.ncbi.nlm.nih.gov/?term=in+vitro+diagnostics&amp;sort=date">PubMed 体外诊断最新论文</a></li><li><a href="https://www.nsfc.gov.cn/">国家自然科学基金委员会</a></li></ul></section></main></html>
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>IVD Horizon · 行业动态</title>
+<style>
+:root{color-scheme:light;--ink:#14243b;--muted:#526277;--line:#dde5ef;--blue:#1558a6}*{box-sizing:border-box}body{margin:0;background:#f5f7fb;color:var(--ink);font:16px/1.6 system-ui,sans-serif}header{background:white;border-bottom:1px solid var(--line)}.wrap,main{max-width:1100px;margin:auto;padding:18px 24px}.wrap{display:flex;justify-content:space-between;align-items:center;gap:16px}.brand{font-weight:800;font-size:22px}a{color:var(--blue)}main{padding-top:38px}h1{font-size:clamp(32px,6vw,54px);line-height:1.1;margin:0}.intro{color:var(--muted)}.grid{display:grid;grid-template-columns:minmax(0,1fr) 265px;gap:24px}aside,article{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px}aside{align-self:start}aside h2{font-size:18px;margin-top:0}aside ul{padding-left:20px}article{margin-bottom:10px}article h2{font-size:18px;margin:6px 0 0}article a{text-decoration:none}article a:hover{text-decoration:underline}small,#status{color:var(--muted)}form{display:flex;flex-wrap:wrap;align-items:end;gap:12px;margin:24px 0 12px}label{display:grid;gap:5px;font-size:14px}input,select,button{font:inherit;padding:7px 10px;border:1px solid #aebcce;border-radius:8px;background:white;color:var(--ink)}button{background:var(--blue);color:white;cursor:pointer}@media(max-width:700px){.grid{grid-template-columns:1fr}}
+</style></head><body><header><div class="wrap"><span class="brand">IVD Horizon</span><a href="#sources">公开信源</a></div></header>
+<main><h1>行业动态</h1><p class="intro">浏览体外诊断领域新发表的论文和技术研究。</p><div class="grid"><section aria-label="资讯列表">
+<form id="filters"><label>栏目<select id="category"><option value='"in vitro diagnostics" OR "diagnostic assay"'>全部科研动态</option><option value='"in vitro diagnostics"'>体外诊断</option><option value='"point-of-care testing"'>即时检测</option><option value='"molecular diagnostics"'>分子诊断</option></select></label><label>发表日期<input type="date" id="date"></label><button>查看</button></form>
+<p id="status" role="status">正在读取 Europe PMC…</p><div id="articles"></div></section>
+<aside id="sources"><h2>公开信源</h2><ul><li><a href="https://europepmc.org/">Europe PMC</a></li><li><a href="https://www.nmpa.gov.cn/">国家药品监督管理局</a></li><li><a href="https://www.fda.gov/medical-devices/products-and-medical-procedures/in-vitro-diagnostics">FDA 体外诊断</a></li><li><a href="https://www.nsfc.gov.cn/">国家自然科学基金委</a></li></ul></aside></div></main>
+<script>
+const form = document.querySelector('#filters');
+const articles = document.querySelector('#articles');
+const status = document.querySelector('#status');
+let request;
+async function load() {
+  request?.abort();
+  const current = new AbortController();
+  request = current;
+  articles.replaceChildren();
+  status.textContent = '正在读取 Europe PMC…';
+  const category = document.querySelector('#category').value;
+  const date = document.querySelector('#date').value;
+  const query = '(' + category + ') AND HAS_DOI:Y' + (date ? ' AND FIRST_PDATE:[' + date + ' TO ' + date + ']' : '');
+  const url = new URL('https://www.ebi.ac.uk/europepmc/webservices/rest/search');
+  url.search = new URLSearchParams({query, format:'json', pageSize:'20', sort_date:'y'});
+  try {
+    const response = await fetch(url, {signal:current.signal});
+    if (!response.ok) throw new Error('HTTP ' + response.status);
+    const data = await response.json();
+    const items = data.resultList.result;
+    if (current.signal.aborted) return;
+    for (const item of items) {
+      const card = document.createElement('article');
+      const meta = document.createElement('small');
+      meta.textContent = [item.firstPublicationDate, item.journalTitle, 'Europe PMC'].filter(Boolean).join(' · ');
+      const title = document.createElement('h2');
+      const link = document.createElement('a');
+      link.href = 'https://doi.org/' + encodeURIComponent(item.doi).replaceAll('%2F','/');
+      link.textContent = item.title;
+      title.append(link);
+      card.append(meta, title);
+      articles.append(card);
+    }
+    status.textContent = items.length ? '显示 ' + items.length + ' 条结果 · 按发表日期排序' : '没有找到匹配的论文。试试清空日期。';
+  } catch (error) {
+    if (!current.signal.aborted) status.textContent = '暂时无法读取 Europe PMC。请点击「查看」重试，或打开右侧信源。';
+  }
+}
+form.addEventListener('submit', event => {event.preventDefault();load();});
+load();
+</script></body></html>
