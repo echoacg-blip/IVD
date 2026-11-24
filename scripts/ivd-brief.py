@@ -50,7 +50,7 @@ def regulatory():
     endpoint = "https://api.fda.gov/device/510k.json"
     results = []
     failed = []
-    for committee in ("CL", "HE"):
+    for committee in ("CH", "HE"):
         try:
             data = get(endpoint, {
                 "search": f"advisory_committee:{committee}",
@@ -79,7 +79,7 @@ def regulatory():
 
 def pma():
     data = get("https://api.fda.gov/device/pma.json", {
-        "search": "advisory_committee:(CL OR HE OR MI OR IM OR PA)",
+        "search": "advisory_committee:(CH OR HE OR MI OR IM OR PA)",
         "sort": "decision_date:desc", "limit": 8,
     })
     items = []
