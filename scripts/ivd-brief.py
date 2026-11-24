@@ -5,6 +5,8 @@ from time import sleep
 from urllib.parse import urlencode, quote, unquote, urlsplit
 from urllib.request import urlopen
 from zoneinfo import ZoneInfo
+from xml.etree import ElementTree as ET
+from email.utils import format_datetime
 
 def get(url, query):
     for attempt in range(2):
@@ -97,6 +99,23 @@ def record_key(item):
         return "doi:" + unquote(url.path.lstrip("/")).strip().casefold()
     return item["url"]
 
+def write_feed(output, payload, collected_at):
+    site = "https://echoacg-blip.github.io/IVD/"
+    rss = ET.Element("rss", version="2.0")
+    channel = ET.SubElement(rss, "channel")
+    ET.SubElement(channel, "title").text = "IVD Horizon"
+    ET.SubElement(channel, "link").text = site
+    ET.SubElement(channel, "description").text = "体外诊断行业简报"
+    ET.SubElement(channel, "lastBuildDate").text = format_datetime(collected_at)
+    for record in payload["items"]:
+        item = ET.SubElement(channel, "item")
+        for tag, value in (("title", record["title"]), ("link", record["url"]),
+                           ("category", record["category"])):
+            ET.SubElement(item, tag).text = value
+        ET.SubElement(item, "guid", isPermaLink="true").text = record["url"]
+        ET.SubElement(item, "description").text = record.get("summary") or record.get("reason", "")
+    ET.ElementTree(rss).write(output / "feed.xml", encoding="utf-8", xml_declaration=True)
+
 def main():
     output = Path("docs/briefs")
     output.mkdir(exist_ok=True)
@@ -122,6 +141,7 @@ def main():
     ranked = sorted(unique.values(), key=lambda item: (item["score"], item["date"] or "", item["url"]), reverse=True)
     payload = dict(date=date, collected_at=collected_at.isoformat(timespec="seconds"),
                    items=ranked, unavailable=unavailable)
+    write_feed(output, payload, collected_at)
     previous.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
     dates = sorted((p.stem for p in output.glob("????-??-??.json")), reverse=True)
     (output / "index.json").write_text(json.dumps(dates), encoding="utf-8")
