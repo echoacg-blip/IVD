@@ -43,6 +43,9 @@ async function showEdition() {
     else shareUrl.searchParams.delete('category');
     if (editionView.value === 'all') shareUrl.searchParams.set('view', 'all');
     else shareUrl.searchParams.delete('view');
+    const searchText = editionQuery.value.trim();
+    if (searchText) shareUrl.searchParams.set('q', searchText);
+    else shareUrl.searchParams.delete('q');
     history.replaceState(null, '', shareUrl);
     const query = editionQuery.value.trim().toLowerCase();
     const matches = brief.items.filter(item =>
@@ -99,6 +102,7 @@ readBrief('index').then(dates => {
   edition.replaceChildren(...dates.map(date => new Option(date, date)));
   if (dates.includes(briefParams.get('edition'))) edition.value = briefParams.get('edition');
   if (briefParams.get('view') === 'all') editionView.value = 'all';
+  editionQuery.value = briefParams.get('q') || '';
   edition.disabled = false;
   return showEdition();
 }).catch(() => {
