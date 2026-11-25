@@ -30,7 +30,8 @@
       "interval_minutes": 120,
       "tags": [],
       "site_fulltext": false,
-      "syndicate_fulltext": false
+      "syndicate_fulltext": false,
+      "selection_class": "research"
     },
     {
       "id": "ivd-fda-510k-ch",
@@ -55,7 +56,8 @@
       "interval_minutes": 120,
       "tags": [],
       "site_fulltext": false,
-      "syndicate_fulltext": false
+      "syndicate_fulltext": false,
+      "selection_class": "regulatory"
     },
     {
       "id": "ivd-fda-510k-he",
@@ -80,7 +82,8 @@
       "interval_minutes": 120,
       "tags": [],
       "site_fulltext": false,
-      "syndicate_fulltext": false
+      "syndicate_fulltext": false,
+      "selection_class": "regulatory"
     },
     {
       "id": "ivd-fda-pma",
@@ -108,7 +111,8 @@
       "interval_minutes": 120,
       "tags": [],
       "site_fulltext": false,
-      "syndicate_fulltext": false
+      "syndicate_fulltext": false,
+      "selection_class": "regulatory"
     }
   ]
 }
