@@ -3,7 +3,7 @@
 // - a company topic takes an article about another company that only mentions it (several subjects,
 //   its name nowhere in the title), or drops one about it whose title names it in English, in another
 //   case, next to Chinese text, or only by a product (it is the article's only subject);
-// - a Latin name matches inside another word ("Roche DiagnosticsExtra" is not Meta); a headline naming a company
+// - a Latin name matches inside another word ("RocheExtra" is not Meta); a headline naming a company
 //   that is not a subject of the article gets in;
 // - a technical-direction topic stops taking its tags;
 // - withdrawn or not yet released articles appear in a list or a count;
@@ -53,20 +53,20 @@ test("a company topic takes the articles about it, not the ones that only mentio
   const subpoena = await report({ at: hoursAgo(33), title: `加州检察长向 BD Diagnostics 发出传票 ${T}`, subjects: ["bd-diagnostics", "abbott-diagnostics", "roche-diagnostics"] });
   const lowerCase = await report({ at: hoursAgo(34), title: `bd diagnostics 公布新试剂 ${T}`, subjects: ["bd-diagnostics", "abbott-diagnostics"] });
   const pact = await report({ at: hoursAgo(35), title: `二十余家科技公司签署安全协议 ${T}`, subjects: ["bd-diagnostics", "abbott-diagnostics", "siemens-healthineers"] });
-  const metadata = await report({ at: hoursAgo(36), title: `Roche DiagnosticsExtra 标准发布，BD Diagnostics 参与 ${T}`, subjects: ["roche-diagnostics", "bd-diagnostics"] });
+  const metadata = await report({ at: hoursAgo(36), title: `RocheExtra 标准发布，BD Diagnostics 参与 ${T}`, subjects: ["roche-diagnostics", "bd-diagnostics"] });
   const adjacent = await report({ at: hoursAgo(37), title: `发布Roche Diagnostics的新试剂 ${T}`, subjects: ["roche-diagnostics", "bd-diagnostics"] });
   const headline = await report({ at: hoursAgo(38), title: `Abbott Diagnostics 被一篇盘点提到 ${T}`, subjects: ["siemens-healthineers"] });
   const agent = await report({ at: hoursAgo(39), title: `即时检测平台发布 ${T}`, tags: ["即时检测"] });
 
-  const anthropic = await members("abbott-diagnostics");
-  for (const id of [about, product, english]) assert.ok(anthropic.includes(id), "about Abbott Diagnostics");
-  for (const id of [subpoena, lowerCase, pact, headline]) assert.ok(!anthropic.includes(id), "only mentions Abbott Diagnostics");
-  const openai = await members("bd-diagnostics");
-  for (const id of [subpoena, lowerCase, metadata]) assert.ok(openai.includes(id), "about BD Diagnostics");
-  for (const id of [english, pact]) assert.ok(!openai.includes(id), "only mentions BD Diagnostics");
-  const meta = await members("roche-diagnostics");
-  assert.ok(meta.includes(adjacent), "Meta next to Chinese text");
-  assert.ok(!meta.includes(metadata), "Roche DiagnosticsExtra is not Meta");
+  const abbott = await members("abbott-diagnostics");
+  for (const id of [about, product, english]) assert.ok(abbott.includes(id), "about Abbott Diagnostics");
+  for (const id of [subpoena, lowerCase, pact, headline]) assert.ok(!abbott.includes(id), "only mentions Abbott Diagnostics");
+  const bd = await members("bd-diagnostics");
+  for (const id of [subpoena, lowerCase, metadata]) assert.ok(bd.includes(id), "about BD Diagnostics");
+  for (const id of [english, pact]) assert.ok(!bd.includes(id), "only mentions BD Diagnostics");
+  const roche = await members("roche-diagnostics");
+  assert.ok(roche.includes(adjacent), "Roche next to Chinese text");
+  assert.ok(!roche.includes(metadata), "Roche does not match inside RocheExtra");
   assert.ok((await members("poct")).includes(agent), "a technical direction takes its tag");
 
   // The article page names the topics it belongs to.
