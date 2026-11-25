@@ -33,6 +33,7 @@ function inEnglish(entries: RouteConfigEntry[]): RouteConfigEntry[] {
 
 const PAGES: RouteConfigEntry[] = [
   ...READER_PAGES.map((p) => p.path ? route(p.path, p.file, p.id ? { id: p.id } : {}) : index(p.file)),
+  route("policy", "routes/policy.tsx"),
   ...modulePages,
 ];
 

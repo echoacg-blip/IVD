@@ -30,6 +30,7 @@ const SECTIONS: Array<{ key: string; title: Text; items: NavItem[] }> = [
       { to: "/hot", label: L("热点榜", "Trending"), icon: IconFlame },
       { to: "/daily", label: L(withSubject("日报"), `${SITE.subject} Daily`), icon: IconDoc, covers: ["/weekly", "/monthly"] },
       { to: "/topics", label: L("主题", "Topics"), icon: IconGrid },
+      { to: "/policy", label: L("政策追踪", "Policy Tracker"), icon: IconDoc },
       { to: "/starred", label: L("收藏", "Saved"), icon: IconBookmark },
     ],
   },
