@@ -1042,6 +1042,44 @@
       "tags": [],
       "site_fulltext": false,
       "syndicate_fulltext": false
+    },
+    {
+      "id": "ivd-nccl-quality",
+      "name": "国家临床检验中心 · 室间质评与质量通知",
+      "kind": "json_list",
+      "config": {
+        "url": "https://www.nccl.org.cn/showMeetList?currentPage=1&pageSize=12&subCode=09&his=0",
+        "method": "POST",
+        "itemsPath": "meetingList",
+        "titlePaths": [
+          "mainTitle"
+        ],
+        "publishedAtPath": "pubDate",
+        "externalIdPath": "id",
+        "urlTemplate": "https://www.nccl.org.cn/showMeetDetail?code=09&id={id}",
+        "allowUrlPrefixes": [
+          "https://www.nccl.org.cn/showMeetDetail?"
+        ],
+        "ingestNoiseFilter": {
+          "requireTitleMatches": [
+            "室间质量评价",
+            "室间质评",
+            "正确度",
+            "能力验证",
+            "质量控制"
+          ]
+        },
+        "_aihot": {
+          "initialBackfillLimit": 1,
+          "initialBackfillMonths": 3
+        }
+      },
+      "tier": "T1",
+      "participation_mode": "editorial",
+      "interval_minutes": 480,
+      "tags": [],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
     }
   ]
 }
