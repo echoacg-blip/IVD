@@ -113,6 +113,721 @@
       "site_fulltext": false,
       "syndicate_fulltext": false,
       "selection_class": "regulatory"
+    },
+    {
+      "id": "ivd-nhsa-policy",
+      "name": "国家医保局 · 检验价格及招采政策",
+      "kind": "web_list",
+      "config": {
+        "url": "https://www.nhsa.gov.cn/col/col53/index.html",
+        "parseMode": "recordset_cdata",
+        "itemSelector": "li",
+        "linkSelector": "a[title]",
+        "publishedAtSelector": "span",
+        "publishedAtUtcOffset": "+08:00",
+        "allowUrlPrefixes": ["https://www.nhsa.gov.cn/art/"],
+        "ingestNoiseFilter": {
+          "requireTitleMatches": ["检验","体外诊断","试剂","医用耗材","医疗服务价格","医疗服务项目","集中带量采购","挂网"]
+        },
+        "detail": {
+          "maxFetches": 2
+        },
+        "_aihot": {
+          "initialBackfillLimit": 2,
+          "initialBackfillMonths": 3
+        }
+      },
+      "tier": "T1",
+      "selection_class": "regulatory",
+      "participation_mode": "editorial",
+      "interval_minutes": 480,
+      "tags": [],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "ivd-cninfo-300760",
+      "name": "巨潮资讯 · 迈瑞医疗",
+      "kind": "json_list",
+      "config": {
+        "url": "https://www.cninfo.com.cn/new/hisAnnouncement/query?pageNum=1&pageSize=12&column=szse&tabName=fulltext&stock=300760%2C9900035304",
+        "method": "POST",
+        "headers": {
+          "referer": "https://www.cninfo.com.cn/"
+        },
+        "itemsPath": "announcements",
+        "titlePaths": ["announcementTitle"],
+        "authorPaths": ["secName"],
+        "publishedAtPath": "announcementTime",
+        "publishedAtUnit": "epoch_ms",
+        "externalIdPath": "announcementId",
+        "urlTemplate": "https://static.cninfo.com.cn/{adjunctUrl}",
+        "allowUrlPrefixes": ["https://static.cninfo.com.cn/finalpage/"],
+        "ingestNoiseFilter": {
+          "requireTitleMatches": ["注册证","注册批准","获批","上市许可","新品","合作","并购","收购","对外投资","投资建设","生产基地","产能","年度报告摘要","季度报告","业绩预告","业绩快报"]
+        },
+        "_aihot": {
+          "initialBackfillLimit": 1,
+          "initialBackfillMonths": 2
+        }
+      },
+      "tier": "T1",
+      "participation_mode": "isolated",
+      "interval_minutes": 720,
+      "tags": [],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "ivd-cninfo-300832",
+      "name": "巨潮资讯 · 新产业",
+      "kind": "json_list",
+      "config": {
+        "url": "https://www.cninfo.com.cn/new/hisAnnouncement/query?pageNum=1&pageSize=12&column=szse&tabName=fulltext&stock=300832%2C9900027265",
+        "method": "POST",
+        "headers": {
+          "referer": "https://www.cninfo.com.cn/"
+        },
+        "itemsPath": "announcements",
+        "titlePaths": ["announcementTitle"],
+        "authorPaths": ["secName"],
+        "publishedAtPath": "announcementTime",
+        "publishedAtUnit": "epoch_ms",
+        "externalIdPath": "announcementId",
+        "urlTemplate": "https://static.cninfo.com.cn/{adjunctUrl}",
+        "allowUrlPrefixes": ["https://static.cninfo.com.cn/finalpage/"],
+        "ingestNoiseFilter": {
+          "requireTitleMatches": ["注册证","注册批准","获批","上市许可","新品","合作","并购","收购","对外投资","投资建设","生产基地","产能","年度报告摘要","季度报告","业绩预告","业绩快报"]
+        },
+        "_aihot": {
+          "initialBackfillLimit": 1,
+          "initialBackfillMonths": 2
+        }
+      },
+      "tier": "T1",
+      "participation_mode": "isolated",
+      "interval_minutes": 720,
+      "tags": [],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "ivd-cninfo-603658",
+      "name": "巨潮资讯 · 安图生物",
+      "kind": "json_list",
+      "config": {
+        "url": "https://www.cninfo.com.cn/new/hisAnnouncement/query?pageNum=1&pageSize=12&column=sse&tabName=fulltext&stock=603658%2C9900026792",
+        "method": "POST",
+        "headers": {
+          "referer": "https://www.cninfo.com.cn/"
+        },
+        "itemsPath": "announcements",
+        "titlePaths": ["announcementTitle"],
+        "authorPaths": ["secName"],
+        "publishedAtPath": "announcementTime",
+        "publishedAtUnit": "epoch_ms",
+        "externalIdPath": "announcementId",
+        "urlTemplate": "https://static.cninfo.com.cn/{adjunctUrl}",
+        "allowUrlPrefixes": ["https://static.cninfo.com.cn/finalpage/"],
+        "ingestNoiseFilter": {
+          "requireTitleMatches": ["注册证","注册批准","获批","上市许可","新品","合作","并购","收购","对外投资","投资建设","生产基地","产能","年度报告摘要","季度报告","业绩预告","业绩快报"]
+        },
+        "_aihot": {
+          "initialBackfillLimit": 1,
+          "initialBackfillMonths": 2
+        }
+      },
+      "tier": "T1",
+      "participation_mode": "isolated",
+      "interval_minutes": 720,
+      "tags": [],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "ivd-cninfo-300482",
+      "name": "巨潮资讯 · 万孚生物",
+      "kind": "json_list",
+      "config": {
+        "url": "https://www.cninfo.com.cn/new/hisAnnouncement/query?pageNum=1&pageSize=12&column=szse&tabName=fulltext&stock=300482%2C9900024914",
+        "method": "POST",
+        "headers": {
+          "referer": "https://www.cninfo.com.cn/"
+        },
+        "itemsPath": "announcements",
+        "titlePaths": ["announcementTitle"],
+        "authorPaths": ["secName"],
+        "publishedAtPath": "announcementTime",
+        "publishedAtUnit": "epoch_ms",
+        "externalIdPath": "announcementId",
+        "urlTemplate": "https://static.cninfo.com.cn/{adjunctUrl}",
+        "allowUrlPrefixes": ["https://static.cninfo.com.cn/finalpage/"],
+        "ingestNoiseFilter": {
+          "requireTitleMatches": ["注册证","注册批准","获批","上市许可","新品","合作","并购","收购","对外投资","投资建设","生产基地","产能","年度报告摘要","季度报告","业绩预告","业绩快报"]
+        },
+        "_aihot": {
+          "initialBackfillLimit": 1,
+          "initialBackfillMonths": 2
+        }
+      },
+      "tier": "T1",
+      "participation_mode": "isolated",
+      "interval_minutes": 720,
+      "tags": [],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "ivd-cninfo-688575",
+      "name": "巨潮资讯 · 亚辉龙",
+      "kind": "json_list",
+      "config": {
+        "url": "https://www.cninfo.com.cn/new/hisAnnouncement/query?pageNum=1&pageSize=12&column=sse&tabName=fulltext&stock=688575%2Cnssc1000247",
+        "method": "POST",
+        "headers": {
+          "referer": "https://www.cninfo.com.cn/"
+        },
+        "itemsPath": "announcements",
+        "titlePaths": ["announcementTitle"],
+        "authorPaths": ["secName"],
+        "publishedAtPath": "announcementTime",
+        "publishedAtUnit": "epoch_ms",
+        "externalIdPath": "announcementId",
+        "urlTemplate": "https://static.cninfo.com.cn/{adjunctUrl}",
+        "allowUrlPrefixes": ["https://static.cninfo.com.cn/finalpage/"],
+        "ingestNoiseFilter": {
+          "requireTitleMatches": ["注册证","注册批准","获批","上市许可","新品","合作","并购","收购","对外投资","投资建设","生产基地","产能","年度报告摘要","季度报告","业绩预告","业绩快报"]
+        },
+        "_aihot": {
+          "initialBackfillLimit": 1,
+          "initialBackfillMonths": 2
+        }
+      },
+      "tier": "T1",
+      "participation_mode": "isolated",
+      "interval_minutes": 720,
+      "tags": [],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "ivd-cninfo-300463",
+      "name": "巨潮资讯 · 迈克生物",
+      "kind": "json_list",
+      "config": {
+        "url": "https://www.cninfo.com.cn/new/hisAnnouncement/query?pageNum=1&pageSize=12&column=szse&tabName=fulltext&stock=300463%2C9900024338",
+        "method": "POST",
+        "headers": {
+          "referer": "https://www.cninfo.com.cn/"
+        },
+        "itemsPath": "announcements",
+        "titlePaths": ["announcementTitle"],
+        "authorPaths": ["secName"],
+        "publishedAtPath": "announcementTime",
+        "publishedAtUnit": "epoch_ms",
+        "externalIdPath": "announcementId",
+        "urlTemplate": "https://static.cninfo.com.cn/{adjunctUrl}",
+        "allowUrlPrefixes": ["https://static.cninfo.com.cn/finalpage/"],
+        "ingestNoiseFilter": {
+          "requireTitleMatches": ["注册证","注册批准","获批","上市许可","新品","合作","并购","收购","对外投资","投资建设","生产基地","产能","年度报告摘要","季度报告","业绩预告","业绩快报"]
+        },
+        "_aihot": {
+          "initialBackfillLimit": 1,
+          "initialBackfillMonths": 2
+        }
+      },
+      "tier": "T1",
+      "participation_mode": "isolated",
+      "interval_minutes": 720,
+      "tags": [],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "ivd-cninfo-688289",
+      "name": "巨潮资讯 · 圣湘生物",
+      "kind": "json_list",
+      "config": {
+        "url": "https://www.cninfo.com.cn/new/hisAnnouncement/query?pageNum=1&pageSize=12&column=sse&tabName=fulltext&stock=688289%2Cnssc1000305",
+        "method": "POST",
+        "headers": {
+          "referer": "https://www.cninfo.com.cn/"
+        },
+        "itemsPath": "announcements",
+        "titlePaths": ["announcementTitle"],
+        "authorPaths": ["secName"],
+        "publishedAtPath": "announcementTime",
+        "publishedAtUnit": "epoch_ms",
+        "externalIdPath": "announcementId",
+        "urlTemplate": "https://static.cninfo.com.cn/{adjunctUrl}",
+        "allowUrlPrefixes": ["https://static.cninfo.com.cn/finalpage/"],
+        "ingestNoiseFilter": {
+          "requireTitleMatches": ["注册证","注册批准","获批","上市许可","新品","合作","并购","收购","对外投资","投资建设","生产基地","产能","年度报告摘要","季度报告","业绩预告","业绩快报"]
+        },
+        "_aihot": {
+          "initialBackfillLimit": 1,
+          "initialBackfillMonths": 2
+        }
+      },
+      "tier": "T1",
+      "participation_mode": "isolated",
+      "interval_minutes": 720,
+      "tags": [],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "ivd-cninfo-688389",
+      "name": "巨潮资讯 · 普门科技",
+      "kind": "json_list",
+      "config": {
+        "url": "https://www.cninfo.com.cn/new/hisAnnouncement/query?pageNum=1&pageSize=12&column=sse&tabName=fulltext&stock=688389%2C9900039187",
+        "method": "POST",
+        "headers": {
+          "referer": "https://www.cninfo.com.cn/"
+        },
+        "itemsPath": "announcements",
+        "titlePaths": ["announcementTitle"],
+        "authorPaths": ["secName"],
+        "publishedAtPath": "announcementTime",
+        "publishedAtUnit": "epoch_ms",
+        "externalIdPath": "announcementId",
+        "urlTemplate": "https://static.cninfo.com.cn/{adjunctUrl}",
+        "allowUrlPrefixes": ["https://static.cninfo.com.cn/finalpage/"],
+        "ingestNoiseFilter": {
+          "requireTitleMatches": ["注册证","注册批准","获批","上市许可","新品","合作","并购","收购","对外投资","投资建设","生产基地","产能","年度报告摘要","季度报告","业绩预告","业绩快报"]
+        },
+        "_aihot": {
+          "initialBackfillLimit": 1,
+          "initialBackfillMonths": 2
+        }
+      },
+      "tier": "T1",
+      "participation_mode": "isolated",
+      "interval_minutes": 720,
+      "tags": [],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "ivd-cninfo-002022",
+      "name": "巨潮资讯 · 科华生物",
+      "kind": "json_list",
+      "config": {
+        "url": "https://www.cninfo.com.cn/new/hisAnnouncement/query?pageNum=1&pageSize=12&column=szse&tabName=fulltext&stock=002022%2Cgssz0002022",
+        "method": "POST",
+        "headers": {
+          "referer": "https://www.cninfo.com.cn/"
+        },
+        "itemsPath": "announcements",
+        "titlePaths": ["announcementTitle"],
+        "authorPaths": ["secName"],
+        "publishedAtPath": "announcementTime",
+        "publishedAtUnit": "epoch_ms",
+        "externalIdPath": "announcementId",
+        "urlTemplate": "https://static.cninfo.com.cn/{adjunctUrl}",
+        "allowUrlPrefixes": ["https://static.cninfo.com.cn/finalpage/"],
+        "ingestNoiseFilter": {
+          "requireTitleMatches": ["注册证","注册批准","获批","上市许可","新品","合作","并购","收购","对外投资","投资建设","生产基地","产能","年度报告摘要","季度报告","业绩预告","业绩快报"]
+        },
+        "_aihot": {
+          "initialBackfillLimit": 1,
+          "initialBackfillMonths": 2
+        }
+      },
+      "tier": "T1",
+      "participation_mode": "isolated",
+      "interval_minutes": 720,
+      "tags": [],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "ivd-cninfo-002030",
+      "name": "巨潮资讯 · 达安基因",
+      "kind": "json_list",
+      "config": {
+        "url": "https://www.cninfo.com.cn/new/hisAnnouncement/query?pageNum=1&pageSize=12&column=szse&tabName=fulltext&stock=002030%2Cgssz0002030",
+        "method": "POST",
+        "headers": {
+          "referer": "https://www.cninfo.com.cn/"
+        },
+        "itemsPath": "announcements",
+        "titlePaths": ["announcementTitle"],
+        "authorPaths": ["secName"],
+        "publishedAtPath": "announcementTime",
+        "publishedAtUnit": "epoch_ms",
+        "externalIdPath": "announcementId",
+        "urlTemplate": "https://static.cninfo.com.cn/{adjunctUrl}",
+        "allowUrlPrefixes": ["https://static.cninfo.com.cn/finalpage/"],
+        "ingestNoiseFilter": {
+          "requireTitleMatches": ["注册证","注册批准","获批","上市许可","新品","合作","并购","收购","对外投资","投资建设","生产基地","产能","年度报告摘要","季度报告","业绩预告","业绩快报"]
+        },
+        "_aihot": {
+          "initialBackfillLimit": 1,
+          "initialBackfillMonths": 2
+        }
+      },
+      "tier": "T1",
+      "participation_mode": "isolated",
+      "interval_minutes": 720,
+      "tags": [],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "ivd-cninfo-300439",
+      "name": "巨潮资讯 · 美康生物",
+      "kind": "json_list",
+      "config": {
+        "url": "https://www.cninfo.com.cn/new/hisAnnouncement/query?pageNum=1&pageSize=12&column=szse&tabName=fulltext&stock=300439%2C9900023817",
+        "method": "POST",
+        "headers": {
+          "referer": "https://www.cninfo.com.cn/"
+        },
+        "itemsPath": "announcements",
+        "titlePaths": ["announcementTitle"],
+        "authorPaths": ["secName"],
+        "publishedAtPath": "announcementTime",
+        "publishedAtUnit": "epoch_ms",
+        "externalIdPath": "announcementId",
+        "urlTemplate": "https://static.cninfo.com.cn/{adjunctUrl}",
+        "allowUrlPrefixes": ["https://static.cninfo.com.cn/finalpage/"],
+        "ingestNoiseFilter": {
+          "requireTitleMatches": ["注册证","注册批准","获批","上市许可","新品","合作","并购","收购","对外投资","投资建设","生产基地","产能","年度报告摘要","季度报告","业绩预告","业绩快报"]
+        },
+        "_aihot": {
+          "initialBackfillLimit": 1,
+          "initialBackfillMonths": 2
+        }
+      },
+      "tier": "T1",
+      "participation_mode": "isolated",
+      "interval_minutes": 720,
+      "tags": [],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "ivd-cninfo-603387",
+      "name": "巨潮资讯 · 基蛋生物",
+      "kind": "json_list",
+      "config": {
+        "url": "https://www.cninfo.com.cn/new/hisAnnouncement/query?pageNum=1&pageSize=12&column=sse&tabName=fulltext&stock=603387%2C9900031490",
+        "method": "POST",
+        "headers": {
+          "referer": "https://www.cninfo.com.cn/"
+        },
+        "itemsPath": "announcements",
+        "titlePaths": ["announcementTitle"],
+        "authorPaths": ["secName"],
+        "publishedAtPath": "announcementTime",
+        "publishedAtUnit": "epoch_ms",
+        "externalIdPath": "announcementId",
+        "urlTemplate": "https://static.cninfo.com.cn/{adjunctUrl}",
+        "allowUrlPrefixes": ["https://static.cninfo.com.cn/finalpage/"],
+        "ingestNoiseFilter": {
+          "requireTitleMatches": ["注册证","注册批准","获批","上市许可","新品","合作","并购","收购","对外投资","投资建设","生产基地","产能","年度报告摘要","季度报告","业绩预告","业绩快报"]
+        },
+        "_aihot": {
+          "initialBackfillLimit": 1,
+          "initialBackfillMonths": 2
+        }
+      },
+      "tier": "T1",
+      "participation_mode": "isolated",
+      "interval_minutes": 720,
+      "tags": [],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "ivd-cninfo-300685",
+      "name": "巨潮资讯 · 艾德生物",
+      "kind": "json_list",
+      "config": {
+        "url": "https://www.cninfo.com.cn/new/hisAnnouncement/query?pageNum=1&pageSize=12&column=szse&tabName=fulltext&stock=300685%2C9900031703",
+        "method": "POST",
+        "headers": {
+          "referer": "https://www.cninfo.com.cn/"
+        },
+        "itemsPath": "announcements",
+        "titlePaths": ["announcementTitle"],
+        "authorPaths": ["secName"],
+        "publishedAtPath": "announcementTime",
+        "publishedAtUnit": "epoch_ms",
+        "externalIdPath": "announcementId",
+        "urlTemplate": "https://static.cninfo.com.cn/{adjunctUrl}",
+        "allowUrlPrefixes": ["https://static.cninfo.com.cn/finalpage/"],
+        "ingestNoiseFilter": {
+          "requireTitleMatches": ["注册证","注册批准","获批","上市许可","新品","合作","并购","收购","对外投资","投资建设","生产基地","产能","年度报告摘要","季度报告","业绩预告","业绩快报"]
+        },
+        "_aihot": {
+          "initialBackfillLimit": 1,
+          "initialBackfillMonths": 2
+        }
+      },
+      "tier": "T1",
+      "participation_mode": "isolated",
+      "interval_minutes": 720,
+      "tags": [],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "ivd-cninfo-688298",
+      "name": "巨潮资讯 · 东方生物",
+      "kind": "json_list",
+      "config": {
+        "url": "https://www.cninfo.com.cn/new/hisAnnouncement/query?pageNum=1&pageSize=12&column=sse&tabName=fulltext&stock=688298%2C9900039348",
+        "method": "POST",
+        "headers": {
+          "referer": "https://www.cninfo.com.cn/"
+        },
+        "itemsPath": "announcements",
+        "titlePaths": ["announcementTitle"],
+        "authorPaths": ["secName"],
+        "publishedAtPath": "announcementTime",
+        "publishedAtUnit": "epoch_ms",
+        "externalIdPath": "announcementId",
+        "urlTemplate": "https://static.cninfo.com.cn/{adjunctUrl}",
+        "allowUrlPrefixes": ["https://static.cninfo.com.cn/finalpage/"],
+        "ingestNoiseFilter": {
+          "requireTitleMatches": ["注册证","注册批准","获批","上市许可","新品","合作","并购","收购","对外投资","投资建设","生产基地","产能","年度报告摘要","季度报告","业绩预告","业绩快报"]
+        },
+        "_aihot": {
+          "initialBackfillLimit": 1,
+          "initialBackfillMonths": 2
+        }
+      },
+      "tier": "T1",
+      "participation_mode": "isolated",
+      "interval_minutes": 720,
+      "tags": [],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "ivd-cninfo-688068",
+      "name": "巨潮资讯 · 热景生物",
+      "kind": "json_list",
+      "config": {
+        "url": "https://www.cninfo.com.cn/new/hisAnnouncement/query?pageNum=1&pageSize=12&column=sse&tabName=fulltext&stock=688068%2C9900039048",
+        "method": "POST",
+        "headers": {
+          "referer": "https://www.cninfo.com.cn/"
+        },
+        "itemsPath": "announcements",
+        "titlePaths": ["announcementTitle"],
+        "authorPaths": ["secName"],
+        "publishedAtPath": "announcementTime",
+        "publishedAtUnit": "epoch_ms",
+        "externalIdPath": "announcementId",
+        "urlTemplate": "https://static.cninfo.com.cn/{adjunctUrl}",
+        "allowUrlPrefixes": ["https://static.cninfo.com.cn/finalpage/"],
+        "ingestNoiseFilter": {
+          "requireTitleMatches": ["注册证","注册批准","获批","上市许可","新品","合作","并购","收购","对外投资","投资建设","生产基地","产能","年度报告摘要","季度报告","业绩预告","业绩快报"]
+        },
+        "_aihot": {
+          "initialBackfillLimit": 1,
+          "initialBackfillMonths": 2
+        }
+      },
+      "tier": "T1",
+      "participation_mode": "isolated",
+      "interval_minutes": 720,
+      "tags": [],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "ivd-cninfo-688399",
+      "name": "巨潮资讯 · 硕世生物",
+      "kind": "json_list",
+      "config": {
+        "url": "https://www.cninfo.com.cn/new/hisAnnouncement/query?pageNum=1&pageSize=12&column=sse&tabName=fulltext&stock=688399%2C9900039223",
+        "method": "POST",
+        "headers": {
+          "referer": "https://www.cninfo.com.cn/"
+        },
+        "itemsPath": "announcements",
+        "titlePaths": ["announcementTitle"],
+        "authorPaths": ["secName"],
+        "publishedAtPath": "announcementTime",
+        "publishedAtUnit": "epoch_ms",
+        "externalIdPath": "announcementId",
+        "urlTemplate": "https://static.cninfo.com.cn/{adjunctUrl}",
+        "allowUrlPrefixes": ["https://static.cninfo.com.cn/finalpage/"],
+        "ingestNoiseFilter": {
+          "requireTitleMatches": ["注册证","注册批准","获批","上市许可","新品","合作","并购","收购","对外投资","投资建设","生产基地","产能","年度报告摘要","季度报告","业绩预告","业绩快报"]
+        },
+        "_aihot": {
+          "initialBackfillLimit": 1,
+          "initialBackfillMonths": 2
+        }
+      },
+      "tier": "T1",
+      "participation_mode": "isolated",
+      "interval_minutes": 720,
+      "tags": [],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "ivd-cninfo-688338",
+      "name": "巨潮资讯 · 赛科希德",
+      "kind": "json_list",
+      "config": {
+        "url": "https://www.cninfo.com.cn/new/hisAnnouncement/query?pageNum=1&pageSize=12&column=sse&tabName=fulltext&stock=688338%2C9900041384",
+        "method": "POST",
+        "headers": {
+          "referer": "https://www.cninfo.com.cn/"
+        },
+        "itemsPath": "announcements",
+        "titlePaths": ["announcementTitle"],
+        "authorPaths": ["secName"],
+        "publishedAtPath": "announcementTime",
+        "publishedAtUnit": "epoch_ms",
+        "externalIdPath": "announcementId",
+        "urlTemplate": "https://static.cninfo.com.cn/{adjunctUrl}",
+        "allowUrlPrefixes": ["https://static.cninfo.com.cn/finalpage/"],
+        "ingestNoiseFilter": {
+          "requireTitleMatches": ["注册证","注册批准","获批","上市许可","新品","合作","并购","收购","对外投资","投资建设","生产基地","产能","年度报告摘要","季度报告","业绩预告","业绩快报"]
+        },
+        "_aihot": {
+          "initialBackfillLimit": 1,
+          "initialBackfillMonths": 2
+        }
+      },
+      "tier": "T1",
+      "participation_mode": "isolated",
+      "interval_minutes": 720,
+      "tags": [],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "ivd-cninfo-300639",
+      "name": "巨潮资讯 · 凯普生物",
+      "kind": "json_list",
+      "config": {
+        "url": "https://www.cninfo.com.cn/new/hisAnnouncement/query?pageNum=1&pageSize=12&column=szse&tabName=fulltext&stock=300639%2C9900030883",
+        "method": "POST",
+        "headers": {
+          "referer": "https://www.cninfo.com.cn/"
+        },
+        "itemsPath": "announcements",
+        "titlePaths": ["announcementTitle"],
+        "authorPaths": ["secName"],
+        "publishedAtPath": "announcementTime",
+        "publishedAtUnit": "epoch_ms",
+        "externalIdPath": "announcementId",
+        "urlTemplate": "https://static.cninfo.com.cn/{adjunctUrl}",
+        "allowUrlPrefixes": ["https://static.cninfo.com.cn/finalpage/"],
+        "ingestNoiseFilter": {
+          "requireTitleMatches": ["注册证","注册批准","获批","上市许可","新品","合作","并购","收购","对外投资","投资建设","生产基地","产能","年度报告摘要","季度报告","业绩预告","业绩快报"]
+        },
+        "_aihot": {
+          "initialBackfillLimit": 1,
+          "initialBackfillMonths": 2
+        }
+      },
+      "tier": "T1",
+      "participation_mode": "isolated",
+      "interval_minutes": 720,
+      "tags": [],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "ivd-cninfo-688767",
+      "name": "巨潮资讯 · 博拓生物",
+      "kind": "json_list",
+      "config": {
+        "url": "https://www.cninfo.com.cn/new/hisAnnouncement/query?pageNum=1&pageSize=12&column=sse&tabName=fulltext&stock=688767%2C9900041934",
+        "method": "POST",
+        "headers": {
+          "referer": "https://www.cninfo.com.cn/"
+        },
+        "itemsPath": "announcements",
+        "titlePaths": ["announcementTitle"],
+        "authorPaths": ["secName"],
+        "publishedAtPath": "announcementTime",
+        "publishedAtUnit": "epoch_ms",
+        "externalIdPath": "announcementId",
+        "urlTemplate": "https://static.cninfo.com.cn/{adjunctUrl}",
+        "allowUrlPrefixes": ["https://static.cninfo.com.cn/finalpage/"],
+        "ingestNoiseFilter": {
+          "requireTitleMatches": ["注册证","注册批准","获批","上市许可","新品","合作","并购","收购","对外投资","投资建设","生产基地","产能","年度报告摘要","季度报告","业绩预告","业绩快报"]
+        },
+        "_aihot": {
+          "initialBackfillLimit": 1,
+          "initialBackfillMonths": 2
+        }
+      },
+      "tier": "T1",
+      "participation_mode": "isolated",
+      "interval_minutes": 720,
+      "tags": [],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "ivd-cninfo-688606",
+      "name": "巨潮资讯 · 奥泰生物",
+      "kind": "json_list",
+      "config": {
+        "url": "https://www.cninfo.com.cn/new/hisAnnouncement/query?pageNum=1&pageSize=12&column=sse&tabName=fulltext&stock=688606%2C9900039769",
+        "method": "POST",
+        "headers": {
+          "referer": "https://www.cninfo.com.cn/"
+        },
+        "itemsPath": "announcements",
+        "titlePaths": ["announcementTitle"],
+        "authorPaths": ["secName"],
+        "publishedAtPath": "announcementTime",
+        "publishedAtUnit": "epoch_ms",
+        "externalIdPath": "announcementId",
+        "urlTemplate": "https://static.cninfo.com.cn/{adjunctUrl}",
+        "allowUrlPrefixes": ["https://static.cninfo.com.cn/finalpage/"],
+        "ingestNoiseFilter": {
+          "requireTitleMatches": ["注册证","注册批准","获批","上市许可","新品","合作","并购","收购","对外投资","投资建设","生产基地","产能","年度报告摘要","季度报告","业绩预告","业绩快报"]
+        },
+        "_aihot": {
+          "initialBackfillLimit": 1,
+          "initialBackfillMonths": 2
+        }
+      },
+      "tier": "T1",
+      "participation_mode": "isolated",
+      "interval_minutes": 720,
+      "tags": [],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "ivd-roche-diagnostics",
+      "name": "罗氏 · 诊断公告",
+      "kind": "rss",
+      "config": {
+        "feedUrl": "https://www.roche.com/med_news_xml.xml",
+        "summaryIsBody": true,
+        "allowUrlPrefixes": ["https://www.roche.com/media/releases/"],
+        "ingestNoiseFilter": {
+          "requireTitleMatches": ["diagnostic","cobas","immunoanalyser","assay","navify","pathology","sequencing"]
+        },
+        "_aihot": {
+          "initialBackfillLimit": 2,
+          "initialBackfillMonths": 2
+        }
+      },
+      "tier": "T1",
+      "owner_entity_id": "roche-diagnostics",
+      "participation_mode": "editorial",
+      "interval_minutes": 720,
+      "tags": [],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
     }
   ]
 }

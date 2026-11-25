@@ -21,6 +21,7 @@ import { noiseFiltered } from "@aihot/backend/sources/filters";
 const source = (config: Record<string, unknown>) => ({ id: "test-list", config }) as never;
 
 const pages: Record<string, () => string> = {
+  "/policy-records": () => '<recordset><record><![CDATA[<li><a href="/policy" title="检验项目价格通知">检验项目…</a><span>2026-09-30</span></li>]]></record></recordset>',
   // A news site's feed: a teaser that ends in "Read the full story", next to a post whose feed carries it whole.
   "/teaser.xml": () =>
     `<?xml version="1.0"?><feed xmlns="http://www.w3.org/2005/Atom">` +
@@ -273,6 +274,19 @@ test("noise words match whatever their case", () => {
   assert.equal(noiseFiltered(c("Manus：正组建团队开发面向国内市场的产品", "与笔记本厂商合作的 Agent 产品"), source), false);
   assert.equal(noiseFiltered(c("新款笔记本开售", "首发价 4999 元"), source), true);
   assert.equal(noiseFiltered(c("iPhone 18 开售", ""), source), true);
+});
+
+test("policy records retain the complete title and listed date", async () => {
+  const [item] = await fetchWebList(source({ url: `${site}/policy-records`, parseMode: "recordset_cdata", itemSelector: "li", publishedAtSelector: "span" }));
+  assert.equal(item?.title, "检验项目价格通知");
+  assert.equal(item?.url, `${site}/policy`);
+  assert.equal(item?.publishedAt?.toISOString(), "2026-09-29T16:00:00.000Z");
+});
+
+test("required listing words must occur in the title", () => {
+  const feed = source({ ingestNoiseFilter: { requireTitleMatches: ["diagnostic"] } });
+  assert.equal(noiseFiltered({ url: "https://example.org/a", title: "New DIAGNOSTIC platform" }, feed), false);
+  assert.equal(noiseFiltered({ url: "https://example.org/a", title: "Drug trial", excerpt: "Diagnostics division" }, feed), true);
 });
 
 test("a time without a zone is read in the source's offset, in JSON lists and in detail page metadata", async () => {

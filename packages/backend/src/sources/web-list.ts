@@ -164,7 +164,8 @@ export function fromHtml(html: string, base: string, source: SourceRow): Candida
     if (isSignInUrl(url)) continue;
     if (!sectionsArePosts && listingItself(url, listing)) continue;
     const titleEl = c.titleSelector ? (el.is(c.titleSelector) ? el : el.find(c.titleSelector).first()) : linkEl;
-    const title = collapseWhitespace(titleEl.text() || linkEl.attr("title") || "");
+    const preferredTitle = c.parseMode === "recordset_cdata" ? linkEl.attr("title") : undefined;
+    const title = collapseWhitespace(preferredTitle || titleEl.text() || linkEl.attr("title") || "");
     if (!title) continue;
     let date: PublicationDate = { publishedAt: null, publicationTime: null };
     if (c.publishedAtSelector) {
@@ -364,7 +365,11 @@ export async function fetchWebList(source: SourceRow): Promise<Candidate[]> {
   else if (mode === "docusaurus_changelog") out = fromDocusaurusChangelog(text, base, source);
   else if (mode === "markdown_changelog") out = fromMarkdownChangelog(text, base, source);
   else if (mode === "intercom_changelog") out = fromIntercomChangelog(text, base, source);
-  else out = fromHtml(text, base, source);
+  else if (mode === "recordset_cdata") {
+    const records = /<recordset\b[^>]*>([\s\S]*?)<\/recordset>/i.exec(text)?.[1] ?? "";
+    const entries = Array.from(records.matchAll(/<record\b[^>]*>\s*<!\[CDATA\[([\s\S]*?)\]\]>\s*<\/record>/gi), match => match[1]);
+    out = fromHtml(entries.join("\n"), base, source);
+  } else out = fromHtml(text, base, source);
   if (out.length === 0) throw new FetchError(`no items matched (${mode})`);
   return out;
 }

@@ -21,6 +21,7 @@ export function noiseFiltered(c: Candidate, source: SourceRow): boolean {
   // Case-insensitive: the exemption "agent" keeps "Agent" (words in the lists are lower case).
   const has = (text: string, words: string[] | undefined) => (words ?? []).some((k) => text.includes(k.toLowerCase()));
   const title = c.title.toLowerCase();
+  if (f.requireTitleMatches?.length && !has(title, f.requireTitleMatches)) return true;
   const hay = `${title}\n${(c.excerpt ?? "").toLowerCase()}`;
   if (has(hay, f.keepIfMatches)) return false;
   return has(title, f.dropMarkersTitleOnly) || has(hay, f.dropMarkers);
