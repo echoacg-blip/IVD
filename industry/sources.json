@@ -828,6 +828,220 @@
       "tags": [],
       "site_fulltext": false,
       "syndicate_fulltext": false
+    },
+    {
+      "id": "ivd-nsfc-medicine",
+      "name": "国家自然科学基金委 · 医学科学部通知",
+      "kind": "web_list",
+      "config": {
+        "url": "https://www.nsfc.gov.cn/p1/2858/3214/yxkxbtzgg.html",
+        "parseMode": "html",
+        "itemSelector": "a[href^='/p1/3381/2824/']",
+        "titleSelector": ".item-right-content",
+        "publishedAtSelector": ".date",
+        "allowUrlPrefixes": [
+          "https://www.nsfc.gov.cn/p1/3381/2824/"
+        ],
+        "ingestNoiseFilter": {
+          "requireTitleMatches": [
+            "项目指南",
+            "资助结果",
+            "医学科学部",
+            "体外诊断",
+            "检验医学"
+          ]
+        },
+        "detail": {
+          "maxFetches": 1
+        },
+        "_aihot": {
+          "initialBackfillLimit": 1,
+          "initialBackfillMonths": 3
+        }
+      },
+      "tier": "T1",
+      "selection_class": "research",
+      "participation_mode": "editorial",
+      "interval_minutes": 480,
+      "tags": [],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "ivd-caclp-policy",
+      "name": "CACLP · 政策与招采线索",
+      "kind": "web_list",
+      "config": {
+        "url": "https://www.caclp.cn/news/policy.html",
+        "parseMode": "html",
+        "itemSelector": "li:has(a[href*='detail_'] dl)",
+        "titleSelector": "dt",
+        "publishedAtSelector": ".news_ico .time",
+        "allowUrlPrefixes": [
+          "https://www.caclp.cn/article/?detail_"
+        ],
+        "ingestNoiseFilter": {
+          "requireTitleMatches": [
+            "检验",
+            "体外诊断",
+            "诊断试剂",
+            "医用耗材",
+            "医疗器械",
+            "医疗服务价格",
+            "检验结果互认",
+            "质量控制",
+            "室间质评",
+            "注册审评",
+            "集中带量采购"
+          ]
+        },
+        "detail": {
+          "maxFetches": 1
+        },
+        "_aihot": {
+          "initialBackfillLimit": 1,
+          "initialBackfillMonths": 3
+        }
+      },
+      "tier": "T2",
+      "participation_mode": "editorial",
+      "interval_minutes": 720,
+      "tags": [],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "ivd-caivd-policy",
+      "name": "全国体外诊断网 · 政策线索",
+      "kind": "web_list",
+      "config": {
+        "url": "https://www.caivd-org.cn/fagui.asp?sid=12",
+        "parseMode": "html",
+        "itemSelector": "a[href*='article.asp?id=']:has(dl dt)",
+        "titleSelector": "dt",
+        "publishedAtSelector": ".news_ico .time",
+        "allowUrlPrefixes": [
+          "https://www.caivd-org.cn/article.asp?id="
+        ],
+        "ingestNoiseFilter": {
+          "requireTitleMatches": [
+            "检验",
+            "体外诊断",
+            "诊断试剂",
+            "医用耗材",
+            "医疗器械",
+            "医疗服务价格",
+            "检验结果互认",
+            "质量控制",
+            "室间质评",
+            "注册审评",
+            "集中带量采购"
+          ]
+        },
+        "detail": {
+          "maxFetches": 1
+        },
+        "_aihot": {
+          "initialBackfillLimit": 1,
+          "initialBackfillMonths": 3
+        }
+      },
+      "tier": "T2",
+      "participation_mode": "editorial",
+      "interval_minutes": 720,
+      "tags": [],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "ivd-worker-industry",
+      "name": "IVD从业者网 · 产业与政策线索",
+      "kind": "web_list",
+      "config": {
+        "url": "https://www.ivdworker.com/news",
+        "parseMode": "html",
+        "itemSelector": "a.px24[href^='/news/']:has(.font-500)",
+        "titleSelector": ".font-500",
+        "publishedAtSelector": ".bottom-24 .text-14",
+        "allowUrlPrefixes": [
+          "https://www.ivdworker.com/news/"
+        ],
+        "ingestNoiseFilter": {
+          "requireTitleMatches": [
+            "检验",
+            "体外诊断",
+            "诊断试剂",
+            "医用耗材",
+            "医疗器械",
+            "医疗服务价格",
+            "检验结果互认",
+            "质量控制",
+            "室间质评",
+            "注册审评",
+            "集中带量采购",
+            "IVD",
+            "获批",
+            "并购",
+            "财报",
+            "产能",
+            "上市"
+          ]
+        },
+        "detail": {
+          "maxFetches": 1
+        },
+        "_aihot": {
+          "initialBackfillLimit": 1,
+          "initialBackfillMonths": 3
+        }
+      },
+      "tier": "T2",
+      "participation_mode": "editorial",
+      "interval_minutes": 720,
+      "tags": [],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "ivd-china-academic",
+      "name": "检验视界 · 临床学术线索",
+      "kind": "web_list",
+      "config": {
+        "url": "https://www.ivdchina.org/academic/",
+        "parseMode": "html",
+        "itemSelector": ".article-item-info:has(.article-item-title)",
+        "linkSelector": "a.article-item-title",
+        "publishedAtRegex": "icon-time[^>]*></i>\\s*(\\d{4}-\\d{2}-\\d{2})",
+        "allowUrlPrefixes": [
+          "https://www.ivdchina.org/academic/show-"
+        ],
+        "ingestNoiseFilter": {
+          "requireTitleMatches": [
+            "检验",
+            "诊断",
+            "质量",
+            "样本",
+            "临床",
+            "血常规",
+            "免疫",
+            "凝血",
+            "质评"
+          ]
+        },
+        "detail": {
+          "maxFetches": 1
+        },
+        "_aihot": {
+          "initialBackfillLimit": 1,
+          "initialBackfillMonths": 3
+        }
+      },
+      "tier": "T2",
+      "participation_mode": "editorial",
+      "interval_minutes": 1440,
+      "tags": [],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
     }
   ]
 }
