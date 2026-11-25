@@ -70,21 +70,21 @@ test("a folded card's other sources are those of the fact its representative rep
 
 test("a query that names a company also finds the articles about it", async () => {
   const about = await report(MEDIA, { selected: false, hoursAgo: 3, subjects: ["abbott-diagnostics"], title: `新检测试剂上市 ${T}` });
-  const mention = await report(MEDIA, { selected: false, hoursAgo: 4, title: `abbott diagnostics 被一篇盘点顺带提到 ${T}` });
+  const mention = await report(MEDIA, { selected: false, hoursAgo: 4, title: `abbott 被一篇盘点顺带提到 ${T}` });
   const other = await report(MEDIA, { selected: false, hoursAgo: 5, title: `无关的新闻 ${T}` });
   for (const id of [about, mention, other]) await publishArticle(id);
   const search = async (q: string, tab = "") => {
     const res = await app.inject({ method: "GET", url: `/api/site/pool?q=${encodeURIComponent(q)}${tab}` });
     return (JSON.parse(res.body).items as Array<{ id: string }>).map((i) => i.id);
   };
-  const latest = await search("Abbott Diagnostics");
-  assert.ok(latest.includes(about), "the Abbott Diagnostics subject without the word");
+  const latest = await search("Abbott");
+  assert.ok(latest.includes(about), "the Abbott subject without the word");
   assert.ok(latest.includes(mention), "text matches stay");
   assert.ok(!latest.includes(other));
-  const relevance = await search("abbott diagnostics", "&tab=relevance");
+  const relevance = await search("abbott", "&tab=relevance");
   assert.ok(relevance.indexOf(about) >= 0 && relevance.indexOf(about) < relevance.indexOf(mention), "the subject ranks first");
   // Only the whole query names the company: a narrower search stays a text search.
-  assert.ok(!(await search(`abbott diagnostics ${T}-nothing`)).includes(about));
+  assert.ok(!(await search(`abbott ${T}-nothing`)).includes(about));
 });
 
 test("bare addresses in post text become safe links that read short, as X shows them", () => {
