@@ -18,11 +18,13 @@ const git = (...args: string[]) => execFileSync("git", args, { cwd: root, encodi
 git("init", "-q");
 git("config", "user.email", "test@example.invalid");
 git("config", "user.name", "Test");
-write("database/migrations/0001_history.sql", "UPDATE old_table SET done = true;");
+write("database/migrations/0001_history.sql", "UPDATE old_table SET done = true;\n");
 git("add", ".");
 git("commit", "-qm", "history");
 
 test("unchanged history is accepted, but edits and deletions fail", () => {
+  assert.deepEqual(checkMigrations(root, "HEAD"), []);
+  write("database/migrations/0001_history.sql", "UPDATE old_table SET done = true;\r\n");
   assert.deepEqual(checkMigrations(root, "HEAD"), []);
   write("database/migrations/0001_history.sql", "SELECT 1;");
   assert.match(checkMigrations(root, "HEAD").join("\n"), /immutable/);

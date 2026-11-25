@@ -35,6 +35,13 @@ export interface FeedItemProps {
   at?: string;
 }
 
+// WebKit can leave the article mounted after browser Back when a deep feed uses a view transition.
+// The feed keeps the same history and scroll restoration without the animation on that engine.
+function supportsFeedTransition(): boolean {
+  const ua = typeof window === "undefined" ? "" : window.navigator.userAgent;
+  return !/AppleWebKit/i.test(ua) || /(?:Chrome|Chromium)\//i.test(ua);
+}
+
 export const FeedItem = memo(function FeedItem({ item, group, filters, read = false, onOpen, showTags = false, tagTopics, currentTopicSlug, at }: FeedItemProps) {
   const t = useT();
   const locale = useLocale();
@@ -85,14 +92,14 @@ export const FeedItem = memo(function FeedItem({ item, group, filters, read = fa
 
       {isX ? (
         item.summary ? <p className={`mt-1.5 whitespace-pre-line text-ui-body leading-[1.75] line-clamp-5 lg:mt-2 lg:line-clamp-4 ${readTone(read, "text-ink")}`}>
-          <IntentLink viewTransition to={`/items/${item.id}`} onClick={open} className="after:absolute after:inset-0 after:content-['']">
+          <IntentLink viewTransition={supportsFeedTransition()} to={`/items/${item.id}`} onClick={open} className="after:absolute after:inset-0 after:content-['']">
             {shortAddresses(item.summary)}
           </IntentLink>
-        </p> : <IntentLink viewTransition to={`/items/${item.id}`} onClick={open} aria-label={t(`查看 ${item.x!.authorName} 的帖子`, `View ${item.x!.authorName}'s post`)} className="absolute inset-0" />
+        </p> : <IntentLink viewTransition={supportsFeedTransition()} to={`/items/${item.id}`} onClick={open} aria-label={t(`查看 ${item.x!.authorName} 的帖子`, `View ${item.x!.authorName}'s post`)} className="absolute inset-0" />
       ) : (
         <>
           <h3 className={`mt-1.5 line-clamp-2 text-ui-subheading-sm font-[650] leading-[1.5] lg:mt-2 lg:line-clamp-none lg:leading-[1.55] ${readTone(read, "text-ink")}`}>
-            <IntentLink viewTransition to={`/items/${item.id}`} onClick={open} className="after:absolute after:inset-0 after:content-['']">
+            <IntentLink viewTransition={supportsFeedTransition()} to={`/items/${item.id}`} onClick={open} className="after:absolute after:inset-0 after:content-['']">
               {item.title}
             </IntentLink>
           </h3>
