@@ -37,7 +37,7 @@ test("category corrections revise every standard report atomically without selec
   await publishArticle(articleId, { releasedAt: new Date(Date.now() - 60_000) });
   const entry = { itemId: articleId, title: "冻结标题", summary: "冻结摘要", sourceId, firstParty: true, role: "官方" };
   const contents = [
-    { kind: "daily", key: "2097-01-02", content: { leadItemId: articleId, lead: { title: "冻结头条" }, highlights: [articleId], flashes: [], sections: [{ label: "技术创新", items: [entry] }], metrics: { totalEvents: 1, modelsReleased: 1 } } },
+    { kind: "daily", key: "2097-01-02", content: { leadItemId: articleId, lead: { title: "冻结头条" }, highlights: [articleId], flashes: [], sections: [{ label: "技术创新", items: [entry] }], metrics: { totalEvents: 1 } } },
     ...(["weekly", "monthly"] as const).map(kind => ({ kind, key: kind === "weekly" ? "2097-W01" : "2097-01", content: { headline: "冻结头条", leadItemId: articleId, storyOrder: [articleId], overview: "保留总述", themes: [{ heading: "技术创新", summary: "旧模型导读", storyRefs: [entry] }], metrics: { totalStories: 1 } } })),
   ];
   for (const r of contents) await sql`INSERT INTO reports (kind,key,window_start,window_end,content,generated_at)
