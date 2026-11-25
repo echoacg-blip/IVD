@@ -1,6 +1,6 @@
 # IVD Horizon
 
-IVD Horizon 基于 AIHOT 上游提交 `005bd78650bd3a6b20cac2b584aca6ab3b7f38e1`，保留上游 MIT 许可和 NOTICE。
+IVD Horizon 已同步 AIHOT 上游提交 [`fff67715a21a524131a7a3007a23e2a809858db6`](https://github.com/KKKKhazix/AIHOT/commit/fff67715a21a524131a7a3007a23e2a809858db6)。本次升级以初始导入版本 `005bd78650bd3a6b20cac2b584aca6ab3b7f38e1` 为三方合并基线，保留上游 MIT 许可和 NOTICE。
 
 [公开简报](https://echoacg-blip.github.io/IVD/) 由 GitHub Pages 提供。完整应用使用本仓库的 AIHOT Web、API、Worker 和 PostgreSQL。站点定制位于 `site/`，行业分类、信源和编辑规则位于 `industry/`。完整运行与验收见 [行业定制指南](docs/customize.md) 和 [部署文档](docs/deploy.md)。
 
