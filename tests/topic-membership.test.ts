@@ -20,7 +20,7 @@ test("topic lists and pool counts share the exact membership predicate", async (
     { title: "", original: null, tags: ["entity:abbott-diagnostics"], topics: ["abbott-diagnostics"] },
     { title: "Unrelated", original: null, tags: ["entity:abbott-diagnostics", "entity:bd-diagnostics"], topics: [] },
     { title: "Unrelated", original: "ABBOTT DIAGNOSTICS announces a test", tags: ["entity:abbott-diagnostics", "entity:bd-diagnostics"], topics: ["abbott-diagnostics"] },
-    { title: "Roche DiagnosticsExtra", original: null, tags: ["entity:roche-diagnostics", "entity:bd-diagnostics"], topics: [] },
+    { title: "RocheExtra", original: null, tags: ["entity:roche-diagnostics", "entity:bd-diagnostics"], topics: [] },
     { title: "发布Roche Diagnostics的新检测", original: null, tags: ["entity:roche-diagnostics", "entity:bd-diagnostics"], topics: ["roche-diagnostics"] },
     { title: "Unselected", original: null, tags: ["即时检测", "entity:abbott-diagnostics"], topics: ["poct", "abbott-diagnostics"], selected: false },
     { title: "Withdrawn", original: null, tags: ["即时检测", "entity:abbott-diagnostics"], topics: ["poct", "abbott-diagnostics"], visibility: "withdrawn" },
