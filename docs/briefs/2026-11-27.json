@@ -1,6 +1,6 @@
 {
   "date": "2026-11-27",
-  "collected_at": "2026-11-27T03:25:42+08:00",
+  "collected_at": "2026-11-27T13:14:07+08:00",
   "items": [
     {
       "title": "Genotyping Protocol for Identifying Genetic Risk Markers Associated with Alpha-Gal Syndrome.",
@@ -129,6 +129,24 @@
       "new_to_edition": false
     },
     {
+      "title": "Nocardiosis in the COVID-19 Era: A Narrative Review of Pathogenesis, Clinical Challenges, and the Gut-Lung Axis.",
+      "date": "2026-12-01",
+      "category": "前沿科研",
+      "source": "Europe PMC",
+      "summary": "期刊：Microbiologyopen。作者：Ghazanfari Jajin M, Fateh A.。首次发表日期：2026-12-01。",
+      "related": [
+        {
+          "label": "PubMed",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/43094197/"
+        }
+      ],
+      "url": "https://doi.org/10.1002/mbo3.70464",
+      "score": 40,
+      "reason": "科研文献索引 · 近一周发布",
+      "reading_note": "阅读原文时可先看研究人群、对照方法和验证范围，判断结论是否适用于你的应用场景。",
+      "new_to_edition": true
+    },
+    {
       "title": "A Narrative Review on the Recent Advances in Pseudomonas aeruginosa Transmission: Focus on Hospital Environments.",
       "date": "2026-12-01",
       "category": "前沿科研",
@@ -177,24 +195,6 @@
         }
       ],
       "url": "https://doi.org/10.1002/jgc4.70299",
-      "score": 40,
-      "reason": "科研文献索引 · 近一周发布",
-      "reading_note": "阅读原文时可先看研究人群、对照方法和验证范围，判断结论是否适用于你的应用场景。",
-      "new_to_edition": false
-    },
-    {
-      "title": "Concordance of Microbiological and Histopathological Examination of Bone Biopsies in Diagnosing Diabetic Foot Osteomyelitis, a Systematic Review.",
-      "date": "2026-12-01",
-      "category": "前沿科研",
-      "source": "Europe PMC",
-      "summary": "期刊：J Foot Ankle Res。作者：Kadiri L, Maher A, Bridgen A.。首次发表日期：2026-12-01。",
-      "related": [
-        {
-          "label": "PubMed",
-          "url": "https://pubmed.ncbi.nlm.nih.gov/42826126/"
-        }
-      ],
-      "url": "https://doi.org/10.1002/jfa2.70223",
       "score": 40,
       "reason": "科研文献索引 · 近一周发布",
       "reading_note": "阅读原文时可先看研究人群、对照方法和验证范围，判断结论是否适用于你的应用场景。",
